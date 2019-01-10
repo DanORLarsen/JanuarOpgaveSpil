@@ -14,8 +14,10 @@ import javafx.util.Duration;
 public class GameApp extends GameApplication {
     @Override
     protected void initSettings(GameSettings settings) {
-        settings.setWidth(800);
-        settings.setHeight(600);
+        settings.setWidth(1800);
+        settings.setHeight(1600);
+        settings.setIntroEnabled(false);
+        settings.setMenuEnabled(false);
     }
     private Entity player;
     private Entity player2;
