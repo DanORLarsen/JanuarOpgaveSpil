@@ -3,33 +3,57 @@ import com.almasb.fxgl.core.math.FXGLMath;
 import com.almasb.fxgl.entity.Entities;
 import com.almasb.fxgl.entity.Entity;
 import com.almasb.fxgl.entity.component.Component;
+import com.almasb.fxgl.entity.components.CollidableComponent;
 import com.almasb.fxgl.input.UserAction;
+import com.almasb.fxgl.physics.CollisionHandler;
 import com.almasb.fxgl.settings.GameSettings;
 import com.almasb.fxgl.texture.AnimatedTexture;
 import com.almasb.fxgl.texture.AnimationChannel;
 import javafx.scene.input.KeyCode;
+import javafx.scene.paint.Color;
+import javafx.scene.shape.Circle;
+import javafx.scene.text.Text;
 import javafx.util.Duration;
+
+import java.util.Map;
 
 
 public class GameApp extends GameApplication {
     @Override
     protected void initSettings(GameSettings settings) {
-        settings.setWidth(1800);
-        settings.setHeight(1600);
+        settings.setWidth(1600);
+        settings.setHeight(1000);
         settings.setIntroEnabled(false);
         settings.setMenuEnabled(false);
     }
+    private int coinscore;
     private Entity player;
     private Entity player2;
+    public enum EntityType {
+        PLAYER, COIN
+    }
+
 
     @Override
     protected void initGame() {
+        for (int i = 0; i < 10; i++) {
+            Entities.builder()
+                    .type(EntityType.COIN)
+                    .at(FXGLMath.random()*1500, FXGLMath.random()*900)
+                    .viewFromNodeWithBBox(new Circle(15, Color.YELLOW))
+                    .with(new CollidableComponent(true))
+                    .buildAndAttach(getGameWorld());
+        }
         player = Entities.builder()
+                .type(EntityType.PLAYER)
                 .at(200, 200)
+                .with(new CollidableComponent(true))
                 .with(new DudeControl())
                 .buildAndAttach();
         player2 = Entities.builder()
-                .at(200, 200)
+                .type(EntityType.PLAYER)
+                .at(210, 200)
+                .with(new CollidableComponent(true))
                 .with(new DudeControl())
                 .buildAndAttach();
     }
@@ -92,6 +116,37 @@ public class GameApp extends GameApplication {
             }
         }, KeyCode.DOWN);
     }
+    @Override
+    protected void initPhysics() {
+        getPhysicsWorld().addCollisionHandler(new CollisionHandler(EntityType.PLAYER, EntityType.COIN) {
+
+            // order of types is the same as passed into the constructor
+            @Override
+            protected void onCollisionBegin(Entity player, Entity coin) {
+                getGameState().increment("coins",+1);
+                coinscore++;
+                coin.removeFromWorld();
+                /*
+                if (coinscore==10)
+                {exit();}*/ //To make game end after score.
+
+            }
+        });
+    }
+
+    @Override
+    protected void initGameVars(Map<String, Object> vars) {
+        vars.put("coins", 0);
+    }
+    @Override
+    protected void initUI() {
+        Text textPixels = new Text();
+        textPixels.setTranslateX(50); // x = 50
+        textPixels.setTranslateY(100); // y = 100
+
+        getGameScene().addUINode(textPixels); // add to the scene graph
+        textPixels.textProperty().bind(getGameState().intProperty("coins").asString());
+    }
 
     public static void main(String[] args) {
         launch(args);
@@ -115,7 +170,7 @@ public class GameApp extends GameApplication {
 
     @Override
     public void onAdded() {
-        entity.setView(texture);
+        entity.setViewWithBBox(texture);
     }
 
     @Override
