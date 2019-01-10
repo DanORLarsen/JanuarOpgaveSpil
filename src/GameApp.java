@@ -14,8 +14,10 @@ import javafx.scene.paint.Color;
 import javafx.scene.shape.Circle;
 import javafx.scene.text.Text;
 import javafx.util.Duration;
+import kotlinx.coroutines.experimental.Delay;
 
 import java.util.Map;
+import java.util.concurrent.TimeUnit;
 
 
 public class GameApp extends GameApplication {
@@ -44,6 +46,7 @@ public class GameApp extends GameApplication {
                     .with(new CollidableComponent(true))
                     .buildAndAttach(getGameWorld());
         }
+        getAudioPlayer().playSound("bensound-theelevatorbossanova.mp3");
         player = Entities.builder()
                 .type(EntityType.PLAYER)
                 .at(200, 200)
@@ -127,9 +130,19 @@ public class GameApp extends GameApplication {
                 getAudioPlayer().playSound("roblox-death-sound-effect-opNTQCf4R.mp3");
                 coinscore++;
                 coin.removeFromWorld();
-                /*
+
                 if (coinscore==10)
-                {exit();}*/ //To make game end after score.
+                {getAudioPlayer().playSound("Ta Da-SoundBible.com-1884170640.wav");
+                    try {
+                        TimeUnit.SECONDS.sleep(2);//To wait 2 seconds for ta-da to be displayed.. does stop you from moving (TO DO: FIX?)
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
+                    exit(); //To make game end after score.
+                }
+
+
+
 
             }
         });
