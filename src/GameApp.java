@@ -21,6 +21,7 @@ import java.util.Map;
 public class GameApp extends GameApplication {
     @Override
     protected void initSettings(GameSettings settings) {
+        settings.setTitle("Burger Collector?");
         settings.setWidth(1600);
         settings.setHeight(1000);
         settings.setIntroEnabled(false);
@@ -32,15 +33,14 @@ public class GameApp extends GameApplication {
     public enum EntityType {
         PLAYER, COIN
     }
-
-
+    //PICS from flaticon
     @Override
     protected void initGame() {
         for (int i = 0; i < 10; i++) {
             Entities.builder()
                     .type(EntityType.COIN)
                     .at(FXGLMath.random()*1500, FXGLMath.random()*900)
-                    .viewFromNodeWithBBox(new Circle(15, Color.YELLOW))
+                    .viewFromTextureWithBBox("burger.png")
                     .with(new CollidableComponent(true))
                     .buildAndAttach(getGameWorld());
         }
@@ -124,6 +124,7 @@ public class GameApp extends GameApplication {
             @Override
             protected void onCollisionBegin(Entity player, Entity coin) {
                 getGameState().increment("coins",+1);
+                getAudioPlayer().playSound("roblox-death-sound-effect-opNTQCf4R.mp3");
                 coinscore++;
                 coin.removeFromWorld();
                 /*
