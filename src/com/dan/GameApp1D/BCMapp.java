@@ -181,8 +181,11 @@ public class BCMapp extends GameApplication {
                 powerup.removeFromWorld();
                 getMasterTimer().runOnceAfter(() -> {
                     player1.getComponent(DudeControl.class).setMoveSpeed(250);
-                }, Duration.seconds(8)); // wait (amount) seconds
-                getGameWorld().spawn("powerup");
+                }, Duration.seconds(6)); // wait (amount) seconds
+                getMasterTimer().runOnceAfter(() -> {
+                    getGameWorld().spawn("powerup");
+
+                }, Duration.seconds(4)); // wait (amount) seconds
             }
         });
 
@@ -193,9 +196,13 @@ public class BCMapp extends GameApplication {
                 powerup.removeFromWorld();
                 getMasterTimer().runOnceAfter(() -> {
                     player2.getComponent(DudeControl.class).setMoveSpeed(250);
-                }, Duration.seconds(8)); // wait (amount) seconds
 
-                getGameWorld().spawn("powerup");
+                }, Duration.seconds(6)); // wait (amount) seconds
+                getMasterTimer().runOnceAfter(() -> {
+                    getGameWorld().spawn("powerup");
+
+                }, Duration.seconds(4)); // wait (amount) seconds
+
             }
         });
 
