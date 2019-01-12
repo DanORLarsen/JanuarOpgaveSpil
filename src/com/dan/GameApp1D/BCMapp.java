@@ -1,5 +1,6 @@
 package com.dan.GameApp1D;
 
+import com.almasb.fxgl.app.FXGL;
 import com.almasb.fxgl.app.GameApplication;
 import com.almasb.fxgl.core.math.FXGLMath;
 import com.almasb.fxgl.entity.Entities;
@@ -63,6 +64,12 @@ public class BCMapp extends GameApplication {
                 .with(new CollidableComponent(true))
                 .with(new DudeControl())
                 .buildAndAttach();
+        Entities.builder()
+                .type(EntityType.POWERUP)
+                .at(FXGLMath.random()*1500, FXGLMath.random()*900)
+                .viewFromTextureWithBBox("powerup.png")
+                .with(new CollidableComponent(true))
+                .buildAndAttach(getGameWorld());
     }
 
     public Entity getPlayer1() {
@@ -140,7 +147,7 @@ public class BCMapp extends GameApplication {
             @Override
             protected void onCollisionBegin(Entity players, Entity coin) {
                 getGameState().increment("coins",+1);
-
+                //Til power up player1.getComponent(DudeControl.class).setMoveSpeed(320);
                 getAudioPlayer().playSound("roblox-death-sound-effect-opNTQCf4R.mp3");
                 coinscoreP1++;
                 if (coinscoreP1 == 1){
@@ -165,12 +172,33 @@ public class BCMapp extends GameApplication {
                     }, Duration.seconds(2.5)); // wait (amount) seconds
 
                 }
-
-
-
-
             }
         });
+        getPhysicsWorld().addCollisionHandler(new CollisionHandler(EntityType.PLAYER,EntityType.POWERUP) {
+            @Override
+            protected void onCollisionBegin(Entity player1, Entity powerup) {
+                player1.getComponent(DudeControl.class).setMoveSpeed(350);
+                powerup.removeFromWorld();
+                getMasterTimer().runOnceAfter(() -> {
+                    player1.getComponent(DudeControl.class).setMoveSpeed(250);
+                }, Duration.seconds(8)); // wait (amount) seconds
+                getGameWorld().spawn("powerup");
+            }
+        });
+
+        getPhysicsWorld().addCollisionHandler(new CollisionHandler(EntityType.PLAYER2,EntityType.POWERUP) {
+            @Override
+            protected void onCollisionBegin(Entity player1, Entity powerup) {
+                player2.getComponent(DudeControl.class).setMoveSpeed(350);
+                powerup.removeFromWorld();
+                getMasterTimer().runOnceAfter(() -> {
+                    player2.getComponent(DudeControl.class).setMoveSpeed(250);
+                }, Duration.seconds(8)); // wait (amount) seconds
+
+                getGameWorld().spawn("powerup");
+            }
+        });
+
         getPhysicsWorld().addCollisionHandler(new CollisionHandler(EntityType.PLAYER2, EntityType.COIN) {
 
             // order of types is the same as passed into the constructor
@@ -251,8 +279,6 @@ public class BCMapp extends GameApplication {
     public static void main(String[] args) {
         launch(args);
     }
-
-
 }class DudeControl extends Component {
 
     private int speed = 0;
@@ -267,12 +293,11 @@ public class BCMapp extends GameApplication {
 
         texture = new AnimatedTexture(animIdle);
     }
-    private int moveSpeed = 250;
+    public int moveSpeed = 250;
 
     public int getMoveSpeed() {
         return moveSpeed;
     }
-
     public void setMoveSpeed(int moveSpeed) {
         this.moveSpeed = moveSpeed;
     }

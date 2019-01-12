@@ -15,4 +15,15 @@ public class CoinSpawnerFactory implements EntityFactory {
                 .with(new CollidableComponent(true))
                 .build();
     }
+
+    @Spawns("powerup")
+    public Entity newPowerup(SpawnData data) {
+        return  Entities.builder()
+                .type(BCMapp.EntityType.POWERUP)
+                .at(FXGLMath.random()*1500, FXGLMath.random()*900)
+                .viewFromTextureWithBBox("powerup.png")
+                .with(new CollidableComponent(true))
+                .build();
+    }
+
 }
