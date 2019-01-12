@@ -9,7 +9,7 @@ public class CoinSpawnerFactory implements EntityFactory {
     @Spawns("coin")
     public Entity newCoin(SpawnData data) {
         return  Entities.builder()
-                .type(GameApp.EntityType.COIN)
+                .type(BCMapp.EntityType.COIN)
                 .at(FXGLMath.random()*1500, FXGLMath.random()*900)
                 .viewFromTextureWithBBox("burger.png")
                 .with(new CollidableComponent(true))

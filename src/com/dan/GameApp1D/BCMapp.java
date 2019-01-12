@@ -19,14 +19,16 @@ import javafx.util.Duration;
 import java.util.Map;
 
 
-public class GameApp extends GameApplication {
+public class BCMapp extends GameApplication {
     @Override
     protected void initSettings(GameSettings settings) {
-        settings.setTitle("Burger Collector?");
+        //Could make 1 p and 2p apps.
+        settings.setTitle("Burger Collector Man");
         settings.setWidth(1600);
         settings.setHeight(1000);
         settings.setIntroEnabled(false);
         settings.setMenuEnabled(false);
+        settings.setVersion("");
     }
     private int coinscoreP1;
     private int coinscoreP2;
@@ -59,6 +61,15 @@ public class GameApp extends GameApplication {
                 .with(new DudeControl())
                 .buildAndAttach();
     }
+
+    public Entity getPlayer1() {
+        return player1;
+    }
+
+    public Entity getPlayer2() {
+        return player2;
+    }
+
     @Override
     protected void initInput() {
         getInput().addAction(new UserAction("Right") {
@@ -124,7 +135,7 @@ public class GameApp extends GameApplication {
 
             // order of types is the same as passed into the constructor
             @Override
-            protected void onCollisionBegin(Entity player1, Entity coin) {
+            protected void onCollisionBegin(Entity players, Entity coin) {
                 getGameState().increment("coins",+1);
 
                 getAudioPlayer().playSound("roblox-death-sound-effect-opNTQCf4R.mp3");
@@ -161,27 +172,28 @@ public class GameApp extends GameApplication {
         Texture scoreBox1 = getAssetLoader().loadTexture("white.jpg");
         scoreBox1.setTranslateX(37);
         scoreBox1.setTranslateY(80);
-
         getGameScene().addUINode(scoreBox1);
-
-        Texture scoreBox2 = getAssetLoader().loadTexture("white.jpg");
-        scoreBox2.setTranslateX(1487);
-        scoreBox2.setTranslateY(80);
-
-        getGameScene().addUINode(scoreBox2);
 
         Text textPixels1 = new Text();
         textPixels1.setTranslateX(50); // x = 50
         textPixels1.setTranslateY(100); // y = 100
         getGameScene().addUINode(textPixels1); // add to the scene graph
 
+        textPixels1.textProperty().bind(getGameState().intProperty("coins").asString());
+
+        /*
+        Texture scoreBox2 = getAssetLoader().loadTexture("white.jpg");
+        scoreBox2.setTranslateX(1487);
+        scoreBox2.setTranslateY(80);
+        getGameScene().addUINode(scoreBox2);
+
         Text textPixels2 = new Text();
         textPixels2.setTranslateX(1500); // x = 50
         textPixels2.setTranslateY(100); // y = 100
         getGameScene().addUINode(textPixels2);
 
-        textPixels1.textProperty().bind(getGameState().intProperty("coins").asString());
         textPixels2.textProperty().bind(getGameState().intProperty("coins2").asString());
+        //Removed 2nd scoreboard till it works i know i gotta do something in the collisionHandler*/
     }
 
     public static void main(String[] args) {
@@ -215,12 +227,11 @@ public class GameApp extends GameApplication {
 
         if (speed != 0) {
 
-            if (texture.getAnimationChannel() == animIdle) {
+            if (texture.getAnimationChannel() == animIdle)
                 texture.loopAnimationChannel(animWalk);
-            }
 
             speed = (int) (speed * 0.9);
-
+            //duplicate
             if (FXGLMath.abs(speed) < 1) {
                 speed = 0;
                 texture.loopAnimationChannel(animIdle);
