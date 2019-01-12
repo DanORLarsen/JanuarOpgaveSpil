@@ -13,13 +13,10 @@ import com.almasb.fxgl.texture.AnimatedTexture;
 import com.almasb.fxgl.texture.AnimationChannel;
 import com.almasb.fxgl.texture.Texture;
 import javafx.scene.input.KeyCode;
-import javafx.scene.paint.Color;
-import javafx.scene.paint.Paint;
 import javafx.scene.text.Font;
 import javafx.scene.text.Text;
 import javafx.util.Duration;
 
-import java.awt.*;
 import java.util.Map;
 
 
@@ -41,7 +38,7 @@ public class BCMapp extends GameApplication {
     private Entity player1;
     private Entity player2;
     public enum EntityType {
-        PLAYER, COIN
+        PLAYER, COIN, POWERUP , PLAYER2
     }
     //PICS from flaticon
     @Override
@@ -61,7 +58,7 @@ public class BCMapp extends GameApplication {
                 .with(new DudeControl())
                 .buildAndAttach();
         player2 = Entities.builder()
-                .type(EntityType.PLAYER)
+                .type(EntityType.PLAYER2)
                 .at(210, 200)
                 .with(new CollidableComponent(true))
                 .with(new DudeControl())
@@ -149,7 +146,6 @@ public class BCMapp extends GameApplication {
                 if (coinscoreP1 == 1){
 
                 }
-                //coinscoreP2++; + getGameState().increment("coins2", +1);
                 if (coinscoreP1 < 10) //Dont spawn more burgers after reach 10 in score
                 getGameWorld().spawn("coin");
                 coin.removeFromWorld();
@@ -157,7 +153,7 @@ public class BCMapp extends GameApplication {
                 if (coinscoreP1==10)
                 {getAudioPlayer().playSound("Ta Da-SoundBible.com-1884170640.wav");
                 Text textPixels3 = new Text();
-                    textPixels3.setTranslateX(width/2); // x = 50
+                    textPixels3.setTranslateX(width/2-200); // x = 50
                     textPixels3.setTranslateY(height/2); // y = 100
                     textPixels3.setUnderline(true);
                     textPixels3.setFont(Font.font(40));
@@ -175,12 +171,49 @@ public class BCMapp extends GameApplication {
 
             }
         });
+        getPhysicsWorld().addCollisionHandler(new CollisionHandler(EntityType.PLAYER2, EntityType.COIN) {
+
+            // order of types is the same as passed into the constructor
+            @Override
+            protected void onCollisionBegin(Entity players, Entity coin) {
+                getGameState().increment("coins2",+1);
+
+                getAudioPlayer().playSound("roblox-death-sound-effect-opNTQCf4R.mp3");
+                coinscoreP2++;
+                if (coinscoreP2 == 1){
+
+                }
+                if (coinscoreP2 < 10) //Dont spawn more burgers after reach 10 in score
+                    getGameWorld().spawn("coin");
+                coin.removeFromWorld();
+
+                if (coinscoreP2==10)
+                {getAudioPlayer().playSound("Ta Da-SoundBible.com-1884170640.wav");
+                    Text textPixels3 = new Text();
+                    textPixels3.setTranslateX(width/2-200); // x = 50
+                    textPixels3.setTranslateY(height/2); // y = 100
+                    textPixels3.setUnderline(true);
+                    textPixels3.setFont(Font.font(40));
+                    getGameScene().addUINode(textPixels3);
+                    textPixels3.textProperty().bind(getGameState().stringProperty("winner2"));
+
+                    getMasterTimer().runOnceAfter(() -> {
+                        exit(); //To make game end after score.
+                    }, Duration.seconds(2.5)); // wait (amount) seconds
+
+                }
+
+
+
+
+            }
+        });
     }
 
     @Override
     protected void initGameVars(Map<String, Object> vars) {
         vars.put("coins", 0);
-        vars.put("coins2","wanker");
+        vars.put("coins2",0);
         vars.put("winner1","Player 1 WON (WASD Controlled)");
         vars.put("winner2","Player 2 WON (Arrow Controlled)");
     }
@@ -200,7 +233,7 @@ public class BCMapp extends GameApplication {
 
         textPixels1.textProperty().bind(getGameState().intProperty("coins").asString());
 
-/*
+
         Texture scoreBox2 = getAssetLoader().loadTexture("white.jpg");
         scoreBox2.setTranslateX(1487);
         scoreBox2.setTranslateY(80);
@@ -211,7 +244,7 @@ public class BCMapp extends GameApplication {
         textPixels2.setTranslateY(100); // y = 100
         getGameScene().addUINode(textPixels2);
 
-        textPixels2.textProperty().bind(getGameState().stringProperty("coins2"));
+        textPixels2.textProperty().bind(getGameState().intProperty("coins2").asString());
         //Removed 2nd scoreboard till it works i know i gotta do something in the collisionHandler*/
     }
 
@@ -233,6 +266,15 @@ public class BCMapp extends GameApplication {
         animWalk = new AnimationChannel("bob.png", 221, 128, 222, Duration.seconds(1), 0, 3);
 
         texture = new AnimatedTexture(animIdle);
+    }
+    private int moveSpeed = 250;
+
+    public int getMoveSpeed() {
+        return moveSpeed;
+    }
+
+    public void setMoveSpeed(int moveSpeed) {
+        this.moveSpeed = moveSpeed;
     }
 
     @Override
@@ -274,26 +316,28 @@ public class BCMapp extends GameApplication {
         }
 
 
+
+
     }
     public void moveDown() {
-        height = 250;
+        height = getMoveSpeed();
 
         getEntity().setScaleY(-1);
     }
     public void moveUp() {
-        height = -250;
+        height = -getMoveSpeed();
 
         getEntity().setScaleY(1);
     }
 
     public void moveRight() {
-        speed = 250;
+        speed = getMoveSpeed();
 
         getEntity().setScaleX(1);
     }
 
     public void moveLeft() {
-        speed = -250;
+        speed = -getMoveSpeed();
 
         getEntity().setScaleX(-1);
     }
