@@ -13,19 +13,25 @@ import com.almasb.fxgl.texture.AnimatedTexture;
 import com.almasb.fxgl.texture.AnimationChannel;
 import com.almasb.fxgl.texture.Texture;
 import javafx.scene.input.KeyCode;
+import javafx.scene.paint.Color;
+import javafx.scene.paint.Paint;
+import javafx.scene.text.Font;
 import javafx.scene.text.Text;
 import javafx.util.Duration;
 
+import java.awt.*;
 import java.util.Map;
 
 
 public class BCMapp extends GameApplication {
+    int width = 1600;
+    int height = 1000;
     @Override
     protected void initSettings(GameSettings settings) {
         //Could make 1 p and 2p apps.
         settings.setTitle("Burger Collector Man");
-        settings.setWidth(1600);
-        settings.setHeight(1000);
+        settings.setWidth(width);
+        settings.setHeight(height);
         settings.setIntroEnabled(false);
         settings.setMenuEnabled(false);
         settings.setVersion("");
@@ -140,6 +146,9 @@ public class BCMapp extends GameApplication {
 
                 getAudioPlayer().playSound("roblox-death-sound-effect-opNTQCf4R.mp3");
                 coinscoreP1++;
+                if (coinscoreP1 == 1){
+
+                }
                 //coinscoreP2++; + getGameState().increment("coins2", +1);
                 if (coinscoreP1 < 10) //Dont spawn more burgers after reach 10 in score
                 getGameWorld().spawn("coin");
@@ -147,9 +156,17 @@ public class BCMapp extends GameApplication {
 
                 if (coinscoreP1==10)
                 {getAudioPlayer().playSound("Ta Da-SoundBible.com-1884170640.wav");
+                Text textPixels3 = new Text();
+                    textPixels3.setTranslateX(width/2); // x = 50
+                    textPixels3.setTranslateY(height/2); // y = 100
+                    textPixels3.setUnderline(true);
+                    textPixels3.setFont(Font.font(40));
+                    getGameScene().addUINode(textPixels3);
+                    textPixels3.textProperty().bind(getGameState().stringProperty("winner1"));
+
                     getMasterTimer().runOnceAfter(() -> {
                         exit(); //To make game end after score.
-                    }, Duration.seconds(2)); // wait (amount) seconds
+                    }, Duration.seconds(2.5)); // wait (amount) seconds
 
                 }
 
@@ -163,7 +180,9 @@ public class BCMapp extends GameApplication {
     @Override
     protected void initGameVars(Map<String, Object> vars) {
         vars.put("coins", 0);
-        vars.put("coins2",0);
+        vars.put("coins2","wanker");
+        vars.put("winner1","Player 1 WON (WASD Controlled)");
+        vars.put("winner2","Player 2 WON (Arrow Controlled)");
     }
     @Override
     protected void initUI() {
@@ -181,7 +200,7 @@ public class BCMapp extends GameApplication {
 
         textPixels1.textProperty().bind(getGameState().intProperty("coins").asString());
 
-        /*
+/*
         Texture scoreBox2 = getAssetLoader().loadTexture("white.jpg");
         scoreBox2.setTranslateX(1487);
         scoreBox2.setTranslateY(80);
@@ -192,7 +211,7 @@ public class BCMapp extends GameApplication {
         textPixels2.setTranslateY(100); // y = 100
         getGameScene().addUINode(textPixels2);
 
-        textPixels2.textProperty().bind(getGameState().intProperty("coins2").asString());
+        textPixels2.textProperty().bind(getGameState().stringProperty("coins2"));
         //Removed 2nd scoreboard till it works i know i gotta do something in the collisionHandler*/
     }
 
