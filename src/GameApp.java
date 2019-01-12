@@ -35,14 +35,13 @@ public class GameApp extends GameApplication {
     //PICS from flaticon
     @Override
     protected void initGame() {
-        for (int i = 0; i < 10; i++) {
+        getGameWorld().addEntityFactory(new CoinSpawnerFactory()); //Added factory here to make it work (cant do it in same method apparently)
             Entities.builder()
                     .type(EntityType.COIN)
                     .at(FXGLMath.random()*1500, FXGLMath.random()*900)
                     .viewFromTextureWithBBox("burger.png")
                     .with(new CollidableComponent(true))
                     .buildAndAttach(getGameWorld());
-        }
         getAudioPlayer().playSound("bensound-theelevatorbossanova.mp3");
         player1 = Entities.builder()
                 .type(EntityType.PLAYER)
@@ -124,6 +123,7 @@ public class GameApp extends GameApplication {
             @Override
             protected void onCollisionBegin(Entity player1, Entity coin) {
                 getGameState().increment("coins",+1);
+                getGameWorld().spawn("coin");
                 getAudioPlayer().playSound("roblox-death-sound-effect-opNTQCf4R.mp3");
                 coinscore++;
                 coin.removeFromWorld();
