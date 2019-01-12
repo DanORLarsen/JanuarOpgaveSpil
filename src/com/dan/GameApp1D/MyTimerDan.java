@@ -1,3 +1,5 @@
+package com.dan.GameApp1D;
+
 public class MyTimerDan {
     private static long startTime;
 

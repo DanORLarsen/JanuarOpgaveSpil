@@ -1,24 +1,22 @@
-import com.almasb.fxgl.app.FXGL;
+package com.dan.GameApp1D;
+
 import com.almasb.fxgl.app.GameApplication;
 import com.almasb.fxgl.core.math.FXGLMath;
 import com.almasb.fxgl.entity.Entities;
 import com.almasb.fxgl.entity.Entity;
 import com.almasb.fxgl.entity.component.Component;
 import com.almasb.fxgl.entity.components.CollidableComponent;
-import com.almasb.fxgl.entity.view.ScrollingBackgroundView;
 import com.almasb.fxgl.input.UserAction;
 import com.almasb.fxgl.physics.CollisionHandler;
 import com.almasb.fxgl.settings.GameSettings;
 import com.almasb.fxgl.texture.AnimatedTexture;
 import com.almasb.fxgl.texture.AnimationChannel;
 import com.almasb.fxgl.texture.Texture;
-import javafx.geometry.Orientation;
 import javafx.scene.input.KeyCode;
 import javafx.scene.text.Text;
 import javafx.util.Duration;
 
 import java.util.Map;
-import java.util.concurrent.TimeUnit;
 
 
 public class GameApp extends GameApplication {

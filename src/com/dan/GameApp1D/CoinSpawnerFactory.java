@@ -1,7 +1,8 @@
+package com.dan.GameApp1D;
+
 import com.almasb.fxgl.core.math.FXGLMath;
 import com.almasb.fxgl.entity.*;
 import com.almasb.fxgl.entity.components.CollidableComponent;
-import javafx.scene.shape.Rectangle;
 
 public class CoinSpawnerFactory implements EntityFactory {
 
