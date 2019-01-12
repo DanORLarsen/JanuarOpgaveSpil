@@ -30,7 +30,8 @@ public class GameApp extends GameApplication {
         settings.setIntroEnabled(false);
         settings.setMenuEnabled(false);
     }
-    private int coinscore;
+    private int coinscoreP1;
+    private int coinscoreP2;
     private Entity player1;
     private Entity player2;
     public enum EntityType {
@@ -125,16 +126,17 @@ public class GameApp extends GameApplication {
 
             // order of types is the same as passed into the constructor
             @Override
-            protected void onCollisionBegin(Entity player, Entity coin) {
+            protected void onCollisionBegin(Entity player1, Entity coin) {
                 getGameState().increment("coins",+1);
 
                 getAudioPlayer().playSound("roblox-death-sound-effect-opNTQCf4R.mp3");
-                coinscore++;
-                if (coinscore < 10) //Dont spawn more burgers after reach 10 in score
+                coinscoreP1++;
+                //coinscoreP2++; + getGameState().increment("coins2", +1);
+                if (coinscoreP1 < 10) //Dont spawn more burgers after reach 10 in score
                 getGameWorld().spawn("coin");
                 coin.removeFromWorld();
 
-                if (coinscore==10)
+                if (coinscoreP1==10)
                 {getAudioPlayer().playSound("Ta Da-SoundBible.com-1884170640.wav");
                     getMasterTimer().runOnceAfter(() -> {
                         exit(); //To make game end after score.
@@ -152,24 +154,36 @@ public class GameApp extends GameApplication {
     @Override
     protected void initGameVars(Map<String, Object> vars) {
         vars.put("coins", 0);
+        vars.put("coins2",0);
     }
     @Override
     protected void initUI() {
-        //getGameScene().setBackgroundRepeat("NiceGuyBackground.jpg");
+        getGameScene().setBackgroundRepeat("NiceGuyBackground.jpg");
 
-        Text textPixels = new Text();
-        textPixels.setTranslateX(50); // x = 50
-        textPixels.setTranslateY(100); // y = 100
-        getGameScene().addUINode(textPixels); // add to the scene graph
+        Texture scoreBox1 = getAssetLoader().loadTexture("white.jpg");
+        scoreBox1.setTranslateX(37);
+        scoreBox1.setTranslateY(80);
+
+        getGameScene().addUINode(scoreBox1);
+
+        Texture scoreBox2 = getAssetLoader().loadTexture("white.jpg");
+        scoreBox2.setTranslateX(1487);
+        scoreBox2.setTranslateY(80);
+
+        getGameScene().addUINode(scoreBox2);
+
+        Text textPixels1 = new Text();
+        textPixels1.setTranslateX(50); // x = 50
+        textPixels1.setTranslateY(100); // y = 100
+        getGameScene().addUINode(textPixels1); // add to the scene graph
 
         Text textPixels2 = new Text();
-        textPixels.setTranslateX(50); // x = 50
-        textPixels.setTranslateY(1400); // y = 100
+        textPixels2.setTranslateX(1500); // x = 50
+        textPixels2.setTranslateY(100); // y = 100
         getGameScene().addUINode(textPixels2);
 
-
-        textPixels.textProperty().bind(getGameState().intProperty("coins").asString());
-        textPixels2.textProperty().bind(getGameState().intProperty("coins").asString());
+        textPixels1.textProperty().bind(getGameState().intProperty("coins").asString());
+        textPixels2.textProperty().bind(getGameState().intProperty("coins2").asString());
     }
 
     public static void main(String[] args) {
