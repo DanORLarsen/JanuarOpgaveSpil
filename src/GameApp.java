@@ -1,14 +1,18 @@
+import com.almasb.fxgl.app.FXGL;
 import com.almasb.fxgl.app.GameApplication;
 import com.almasb.fxgl.core.math.FXGLMath;
 import com.almasb.fxgl.entity.Entities;
 import com.almasb.fxgl.entity.Entity;
 import com.almasb.fxgl.entity.component.Component;
 import com.almasb.fxgl.entity.components.CollidableComponent;
+import com.almasb.fxgl.entity.view.ScrollingBackgroundView;
 import com.almasb.fxgl.input.UserAction;
 import com.almasb.fxgl.physics.CollisionHandler;
 import com.almasb.fxgl.settings.GameSettings;
 import com.almasb.fxgl.texture.AnimatedTexture;
 import com.almasb.fxgl.texture.AnimationChannel;
+import com.almasb.fxgl.texture.Texture;
+import javafx.geometry.Orientation;
 import javafx.scene.input.KeyCode;
 import javafx.scene.text.Text;
 import javafx.util.Duration;
@@ -121,11 +125,13 @@ public class GameApp extends GameApplication {
 
             // order of types is the same as passed into the constructor
             @Override
-            protected void onCollisionBegin(Entity player1, Entity coin) {
+            protected void onCollisionBegin(Entity player, Entity coin) {
                 getGameState().increment("coins",+1);
-                getGameWorld().spawn("coin");
+
                 getAudioPlayer().playSound("roblox-death-sound-effect-opNTQCf4R.mp3");
                 coinscore++;
+                if (coinscore < 10) //Dont spawn more burgers after reach 10 in score
+                getGameWorld().spawn("coin");
                 coin.removeFromWorld();
 
                 if (coinscore==10)
@@ -155,6 +161,12 @@ public class GameApp extends GameApplication {
 
         getGameScene().addUINode(textPixels); // add to the scene graph
         textPixels.textProperty().bind(getGameState().intProperty("coins").asString());
+
+        Texture texture = FXGL.getAssetLoader().loadTexture("NiceGuyBackground.jpg");
+        ScrollingBackgroundView bg = new ScrollingBackgroundView(texture, Orientation.HORIZONTAL);
+
+        getGameScene().setBackgroundRepeat("NiceGuyBackground.jpg");
+
     }
 
     public static void main(String[] args) {
