@@ -200,8 +200,8 @@ public class GameApp extends GameApplication {
     private AnimationChannel animIdle, animWalk;
 
     public DudeControl() {
-        animIdle = new AnimationChannel("newdude.png", 4, 32, 42, Duration.seconds(1), 1, 1);
-        animWalk = new AnimationChannel("newdude.png", 4, 32, 42, Duration.seconds(1), 0, 3);
+        animIdle = new AnimationChannel("bob.png", 221, 128, 222, Duration.seconds(1), 1, 1);
+        animWalk = new AnimationChannel("bob.png", 221, 128, 222, Duration.seconds(1), 0, 3);
 
         texture = new AnimatedTexture(animIdle);
     }
@@ -248,24 +248,24 @@ public class GameApp extends GameApplication {
 
     }
     public void moveDown() {
-        height = 150;
+        height = 250;
 
         getEntity().setScaleY(-1);
     }
     public void moveUp() {
-        height = -150;
+        height = -250;
 
         getEntity().setScaleY(1);
     }
 
     public void moveRight() {
-        speed = 150;
+        speed = 250;
 
         getEntity().setScaleX(1);
     }
 
     public void moveLeft() {
-        speed = -150;
+        speed = -250;
 
         getEntity().setScaleX(-1);
     }
