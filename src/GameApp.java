@@ -10,11 +10,8 @@ import com.almasb.fxgl.settings.GameSettings;
 import com.almasb.fxgl.texture.AnimatedTexture;
 import com.almasb.fxgl.texture.AnimationChannel;
 import javafx.scene.input.KeyCode;
-import javafx.scene.paint.Color;
-import javafx.scene.shape.Circle;
 import javafx.scene.text.Text;
 import javafx.util.Duration;
-import kotlinx.coroutines.experimental.Delay;
 
 import java.util.Map;
 import java.util.concurrent.TimeUnit;
@@ -30,7 +27,7 @@ public class GameApp extends GameApplication {
         settings.setMenuEnabled(false);
     }
     private int coinscore;
-    private Entity player;
+    private Entity player1;
     private Entity player2;
     public enum EntityType {
         PLAYER, COIN
@@ -47,7 +44,7 @@ public class GameApp extends GameApplication {
                     .buildAndAttach(getGameWorld());
         }
         getAudioPlayer().playSound("bensound-theelevatorbossanova.mp3");
-        player = Entities.builder()
+        player1 = Entities.builder()
                 .type(EntityType.PLAYER)
                 .at(200, 200)
                 .with(new CollidableComponent(true))
@@ -65,28 +62,28 @@ public class GameApp extends GameApplication {
         getInput().addAction(new UserAction("Right") {
             @Override
             protected void onAction() {
-                player.getComponent(DudeControl.class).moveRight();
+                player1.getComponent(DudeControl.class).moveRight();
             }
         }, KeyCode.D);
 
         getInput().addAction(new UserAction("Left") {
             @Override
             protected void onAction() {
-                player.getComponent(DudeControl.class).moveLeft();
+                player1.getComponent(DudeControl.class).moveLeft();
             }
         }, KeyCode.A);
 
         getInput().addAction(new UserAction("Up") {
             @Override
             protected void onAction() {
-                player.getComponent(DudeControl.class).moveUp();
+                player1.getComponent(DudeControl.class).moveUp();
             }
         }, KeyCode.W);
 
         getInput().addAction(new UserAction("Down") {
             @Override
             protected void onAction() {
-                player.getComponent(DudeControl.class).moveDown();
+                player1.getComponent(DudeControl.class).moveDown();
             }
         }, KeyCode.S);
 
@@ -125,7 +122,7 @@ public class GameApp extends GameApplication {
 
             // order of types is the same as passed into the constructor
             @Override
-            protected void onCollisionBegin(Entity player, Entity coin) {
+            protected void onCollisionBegin(Entity player1, Entity coin) {
                 getGameState().increment("coins",+1);
                 getAudioPlayer().playSound("roblox-death-sound-effect-opNTQCf4R.mp3");
                 coinscore++;
@@ -133,12 +130,10 @@ public class GameApp extends GameApplication {
 
                 if (coinscore==10)
                 {getAudioPlayer().playSound("Ta Da-SoundBible.com-1884170640.wav");
-                    try {
-                        TimeUnit.SECONDS.sleep(2);//To wait 2 seconds for ta-da to be displayed.. does stop you from moving (TO DO: FIX?)
-                    } catch (InterruptedException e) {
-                        e.printStackTrace();
-                    }
-                    exit(); //To make game end after score.
+                    getMasterTimer().runOnceAfter(() -> {
+                        exit(); //To make game end after score.
+                    }, Duration.seconds(2)); // wait (amount) seconds
+
                 }
 
 
