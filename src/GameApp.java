@@ -155,18 +155,21 @@ public class GameApp extends GameApplication {
     }
     @Override
     protected void initUI() {
+        //getGameScene().setBackgroundRepeat("NiceGuyBackground.jpg");
+
         Text textPixels = new Text();
         textPixels.setTranslateX(50); // x = 50
         textPixels.setTranslateY(100); // y = 100
-
         getGameScene().addUINode(textPixels); // add to the scene graph
+
+        Text textPixels2 = new Text();
+        textPixels.setTranslateX(50); // x = 50
+        textPixels.setTranslateY(1400); // y = 100
+        getGameScene().addUINode(textPixels2);
+
+
         textPixels.textProperty().bind(getGameState().intProperty("coins").asString());
-
-        Texture texture = FXGL.getAssetLoader().loadTexture("NiceGuyBackground.jpg");
-        ScrollingBackgroundView bg = new ScrollingBackgroundView(texture, Orientation.HORIZONTAL);
-
-        getGameScene().setBackgroundRepeat("NiceGuyBackground.jpg");
-
+        textPixels2.textProperty().bind(getGameState().intProperty("coins").asString());
     }
 
     public static void main(String[] args) {
