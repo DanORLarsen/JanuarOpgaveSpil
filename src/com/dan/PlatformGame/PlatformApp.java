@@ -1,6 +1,8 @@
 package com.dan.PlatformGame;
 
 import com.almasb.fxgl.app.GameApplication;
+import com.almasb.fxgl.audio.Music;
+import com.almasb.fxgl.audio.Sound;
 import com.almasb.fxgl.entity.Entity;
 import com.almasb.fxgl.input.UserAction;
 import com.almasb.fxgl.physics.CollisionHandler;
@@ -81,7 +83,9 @@ public class PlatformApp extends GameApplication {
         getGameWorld().addEntityFactory(new marioFactory());
         getGameWorld().setLevelFromMap("mario..json");
         player = getGameWorld().spawn("player",50,400);
+        getAudioPlayer().setGlobalSoundVolume(0.12);
         getAudioPlayer().playSound("bensound-theelevatorbossanova.mp3");
+        System.out.println(getAudioPlayer().getGlobalSoundVolume());
     }
 
     @Override
@@ -112,7 +116,8 @@ public class PlatformApp extends GameApplication {
                     getDisplay().showMessageBox("Level Complete!", () -> {
                     System.out.println("Dialog closed!");});
                     if (cheater == true)
-                    {getAudioPlayer().playSound("Trolol sound.mp3");
+                    {
+                        getAudioPlayer().playSound("Trolol sound.mp3");
                         getDisplay().showMessageBox("Cheater");}
                 }
                 else if (coins != 5) {
