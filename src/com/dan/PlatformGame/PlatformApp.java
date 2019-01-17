@@ -74,7 +74,7 @@ public class PlatformApp extends GameApplication {
         getInput().addAction(new UserAction("powerUp") {
             @Override
             protected void onActionEnd() {
-                player.getComponent(player1Control.class).setD(100);
+                player.getComponent(player1Control.class).setD(150);
                 System.out.println("Cheat activated");
                 cheater = true;
             }
