@@ -9,7 +9,7 @@ import javafx.scene.input.KeyCode;
 import javafx.scene.text.Text;
 
 import java.util.Map;
-
+//TO DO: Add Camera + lvls and animated sprite
 
 public class PlatformApp extends GameApplication {
     public enum EntityType {
@@ -82,6 +82,7 @@ public class PlatformApp extends GameApplication {
                     System.out.println("Dialog closed!");});
                 }
                     else {getDisplay().showMessageBox("Missing Burger(s)");
+                    getDisplay().showMessageBox("\uD83D\uDE08There is no score icon\uD83D\uDE08");
                     System.out.println("\uD83D\uDE08 - There is no score icon - \uD83D\uDE08");}
                 }});}
 
