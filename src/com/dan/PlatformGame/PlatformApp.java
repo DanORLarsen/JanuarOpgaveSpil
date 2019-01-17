@@ -5,6 +5,7 @@ import com.almasb.fxgl.entity.Entity;
 import com.almasb.fxgl.input.UserAction;
 import com.almasb.fxgl.physics.CollisionHandler;
 import com.almasb.fxgl.settings.GameSettings;
+import com.dan.GameApp1D.MyTimerDan;
 import javafx.scene.input.KeyCode;
 import javafx.scene.text.Text;
 
@@ -17,12 +18,17 @@ public class PlatformApp extends GameApplication {
     }
     @Override
     protected void initSettings(GameSettings gameSettings) {
+        gameSettings.setMenuEnabled(false);
+        gameSettings.setIntroEnabled(false);
         gameSettings.setWidth(15*70);
         gameSettings.setHeight(10*70);
+        MyTimerDan.start();
     }
 
     private int coins = 0;
+    private int notDone = 2;
     private Entity player;
+    private boolean cheater = false;
 
 
     @Override
@@ -39,19 +45,43 @@ public class PlatformApp extends GameApplication {
                 player.getComponent(player1Control.class).right();
             }
         }, KeyCode.RIGHT);
+
+        getInput().addAction(new UserAction("lefta") {
+            @Override
+            protected void onAction() {
+                player.getComponent(player1Control.class).left();
+            }
+        }, KeyCode.A);
+
+        getInput().addAction(new UserAction("rightd") {
+            @Override
+            protected void onAction() {
+                player.getComponent(player1Control.class).right();
+            }
+        }, KeyCode.D);
+
         getInput().addAction(new UserAction("jump") {
             @Override
             protected void onAction() {
                 player.getComponent(player1Control.class).jump();
             }
         }, KeyCode.SPACE);
+        getInput().addAction(new UserAction("powerUp") {
+            @Override
+            protected void onAction() {
+                player.getComponent(player1Control.class).setD(100);
+                System.out.println("Cheat activated");
+                cheater = true;
+            }
+        }, KeyCode.O);
     }
 
     @Override
     protected void initGame() {
         getGameWorld().addEntityFactory(new marioFactory());
         getGameWorld().setLevelFromMap("mario..json");
-        player = getGameWorld().spawn("player",50,50);
+        player = getGameWorld().spawn("player",50,400);
+        getAudioPlayer().playSound("bensound-theelevatorbossanova.mp3");
     }
 
     @Override
@@ -78,13 +108,22 @@ public class PlatformApp extends GameApplication {
             protected void onCollisionBegin(Entity player, Entity door) {
                 if (coins == 5)
                 {
+                    MyTimerDan.stop();
                     getDisplay().showMessageBox("Level Complete!", () -> {
                     System.out.println("Dialog closed!");});
+                    if (cheater == true)
+                    {getAudioPlayer().playSound("Trolol sound.mp3");
+                        getDisplay().showMessageBox("Cheater");}
                 }
-                    else {getDisplay().showMessageBox("Missing Burger(s)");
-                    getDisplay().showMessageBox("\uD83D\uDE08There is no score icon\uD83D\uDE08");
-                    System.out.println("\uD83D\uDE08 - There is no score icon - \uD83D\uDE08");}
-                }});}
+                else if (coins != 5) {
+                    if (notDone == 2) {
+                        getDisplay().showMessageBox("Missing Burger(s)");
+                        notDone--;
+                    }
+                    else if (notDone == 1) {
+                        getDisplay().showMessageBox("\uD83D\uDE08 - There is no score icon - \uD83D\uDE08");
+                    }
+                }}});}
 
     @Override
     protected void initUI() {
@@ -98,5 +137,6 @@ public class PlatformApp extends GameApplication {
 
     public static void main(String[] args) {
         launch(args);
+
     }
 }

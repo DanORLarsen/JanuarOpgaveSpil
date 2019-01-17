@@ -12,7 +12,7 @@ public class MyTimerDan {
     public static void stop()
     {
         long endTime = System.currentTimeMillis();
-        long elapsedTime = (endTime-startTime)/1000;
+        long elapsedTime = (endTime-startTime);
 
         System.out.println("Time elapsed: " + (elapsedTime/1000) + "S, and " + elapsedTime%1000 + "MS");
 
