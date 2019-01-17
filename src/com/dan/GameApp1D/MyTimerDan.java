@@ -13,9 +13,14 @@ public class MyTimerDan {
     {
         long endTime = System.currentTimeMillis();
         long elapsedTime = (endTime-startTime);
-
         System.out.println("Time elapsed: " + (elapsedTime/1000) + "S, and " + elapsedTime%1000 + "MS");
 
     }
 
+    public static String getStringScore()
+    {long endTime = System.currentTimeMillis();
+        long elapsedTime = (endTime-startTime);
+         String d = "It took: " + (elapsedTime/1000) + " Seconds and  " + elapsedTime%1000 + " Milliseconds  to win";
+         return d;
+    }
 }

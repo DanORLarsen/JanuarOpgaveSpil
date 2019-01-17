@@ -33,14 +33,16 @@ public class PlatformApp extends GameApplication {
     private boolean cheater = false;
 
 
+
     @Override
-    protected void initInput() {
+    protected void initInput() { //These dont need explanation (press key does onAction command)
         getInput().addAction(new UserAction("left") {
             @Override
             protected void onAction() {
                 player.getComponent(player1Control.class).left();
             }
         }, KeyCode.LEFT);
+
         getInput().addAction(new UserAction("right") {
             @Override
             protected void onAction() {
@@ -68,9 +70,10 @@ public class PlatformApp extends GameApplication {
                 player.getComponent(player1Control.class).jump();
             }
         }, KeyCode.SPACE);
+
         getInput().addAction(new UserAction("powerUp") {
             @Override
-            protected void onAction() {
+            protected void onActionEnd() {
                 player.getComponent(player1Control.class).setD(100);
                 System.out.println("Cheat activated");
                 cheater = true;
@@ -80,6 +83,7 @@ public class PlatformApp extends GameApplication {
 
     @Override
     protected void initGame() {
+        //Adding my EntityFactory, + map
         getGameWorld().addEntityFactory(new marioFactory());
         getGameWorld().setLevelFromMap("mario..json");
         player = getGameWorld().spawn("player",50,400);
@@ -110,21 +114,25 @@ public class PlatformApp extends GameApplication {
         getPhysicsWorld().addCollisionHandler(new CollisionHandler(PlatformApp.EntityType.PLAYER, PlatformApp.EntityType.DOOR) {
             @Override
             protected void onCollisionBegin(Entity player, Entity door) {
-                if (coins == 5)
+                if (coins == 5) //Check if all burgers are collected
                 {
                     MyTimerDan.stop();
+                    getDisplay().showMessageBox(MyTimerDan.getStringScore());
                     getDisplay().showMessageBox("Level Complete!", () -> {
                     System.out.println("Dialog closed!");});
-                    if (cheater == true)
+
+                    if (cheater == true) //If cheats were activated give cheater messsage + playSound
                     {
                         getAudioPlayer().playSound("Trolol sound.mp3");
                         getDisplay().showMessageBox("Cheater");}
                 }
+                //If not all are collected then do this.
                 else if (coins != 5) {
                     if (notDone == 2) {
                         getDisplay().showMessageBox("Missing Burger(s)");
                         notDone--;
                     }
+                    //If second time not all are collected..  give this hint
                     else if (notDone == 1) {
                         getDisplay().showMessageBox("\uD83D\uDE08 - There is no score icon - \uD83D\uDE08");
                     }
