@@ -70,7 +70,6 @@ public Entity newPlatfrom(SpawnData data) {
                 .build();
     }
 
-    //FIX PLAYER PUSH!!!
     @Spawns("enemies")
     public Entity newEnemies(SpawnData data) {
         PhysicsComponent physics = new PhysicsComponent();
@@ -78,7 +77,7 @@ public Entity newPlatfrom(SpawnData data) {
         return Entities.builder()
                 .type(PlatformApp.EntityType.ENEMIES)
                 .from(data)
-                .viewFromTexture("newdude.png")
+                .viewFromTexture("Thwomp.png")
                 .with(new CollidableComponent(true))
                 .with(physics)
                 .with(new enemyControl())

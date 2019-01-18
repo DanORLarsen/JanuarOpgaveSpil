@@ -8,6 +8,7 @@ import com.almasb.fxgl.settings.GameSettings;
 import com.dan.GameApp1D.MyTimerDan;
 import javafx.scene.input.KeyCode;
 import javafx.scene.text.Text;
+import javafx.util.Duration;
 
 import java.util.Map;
 //TO DO: Add Camera + lvls and animated sprite
@@ -34,6 +35,7 @@ public class PlatformApp extends GameApplication {
     private boolean cheater = false;
     private int hitWater = 0;
     private Entity Enemy;
+    private int jumpCounter = 0;
 
 
 
@@ -69,9 +71,19 @@ public class PlatformApp extends GameApplication {
 
         getInput().addAction(new UserAction("jump") {
             @Override
-            protected void onAction() {
-                player.getComponent(playerControl.class).jump();
-            }
+            protected void onActionBegin() {
+
+                if (jumpCounter < 4) {
+                    jumpCounter++;
+                    player.getComponent(playerControl.class).jump();
+                    if (jumpCounter > 3) {
+                        player.getComponent(playerControl.class).jump();
+                        getMasterTimer().runOnceAfter(() -> {
+                            jumpCounter = 0;
+                        }, Duration.seconds(0.70));
+                    }
+                }
+        }
         }, KeyCode.SPACE);
 
         getInput().addAction(new UserAction("powerUp") {
@@ -90,16 +102,13 @@ public class PlatformApp extends GameApplication {
         getGameWorld().addEntityFactory(new marioFactory());
         getGameWorld().setLevelFromMap("MarioLevel-1.json");
         player = getGameWorld().spawn("player",50,400);
-        Enemy = getGameWorld().spawn("enemies",300,400);
+        Enemy = getGameWorld().spawn("enemies",300, 400);
         getAudioPlayer().setGlobalSoundVolume(0.12);
         getAudioPlayer().loopBGM("Kevin Macleod Scheming Weasel (faster version).mp3");
         System.out.println(getAudioPlayer().getGlobalSoundVolume());
     }
 
-    @Override
-    protected void initGameVars(Map<String, Object> vars) {
-        vars.put("coins", 0);
-    }
+
 
     @Override
     protected void initPhysics() {
@@ -109,7 +118,10 @@ public class PlatformApp extends GameApplication {
             @Override
             protected void onCollisionBegin(Entity players, Entity coin) {
                 player.removeFromWorld();
-                player = getGameWorld().spawn("player",50,400);
+                Enemy.removeFromWorld();
+                Enemy = getGameWorld().spawn("enemies",300,600);
+                player = getGameWorld().spawn("player",50,500);
+
             }});
         getPhysicsWorld().addCollisionHandler(new CollisionHandler(PlatformApp.EntityType.PLAYER, PlatformApp.EntityType.COIN) {
 
@@ -130,7 +142,7 @@ public class PlatformApp extends GameApplication {
             protected void onCollisionBegin(Entity players, Entity coin) {
                 player.removeFromWorld();
                 hitWater++;
-                player = getGameWorld().spawn("player",50,400);
+                player = getGameWorld().spawn("player",50,50);
             }});
 
         getPhysicsWorld().addCollisionHandler(new CollisionHandler(PlatformApp.EntityType.PLAYER, PlatformApp.EntityType.DOOR) {
@@ -160,7 +172,11 @@ public class PlatformApp extends GameApplication {
                         getDisplay().showMessageBox("\uD83D\uDE08 - There is no score icon - \uD83D\uDE08");
                     }
                 }}});}
-
+    @Override
+    protected void initGameVars(Map<String, Object> vars) {
+        vars.put("coins", 0);
+        vars.put("hints", "O - Activate Cheats");
+    }
 
     @Override
     protected void initUI() {
@@ -170,6 +186,12 @@ public class PlatformApp extends GameApplication {
         textPixels1.setTranslateY(30); // y = 100
         getGameScene().addUINode(textPixels1); // add to the scene graph
 
+        Text textPixels2 = new Text();
+        textPixels2.setTranslateX(920); // x = 50
+        textPixels2.setTranslateY(20); // y = 100
+        getGameScene().addUINode(textPixels2);
+
+        textPixels2.textProperty().bind(getGameState().stringProperty("hints"));
         textPixels1.textProperty().bind(getGameState().intProperty("coins").asString());
     }
 

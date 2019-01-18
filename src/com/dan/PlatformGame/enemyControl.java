@@ -1,5 +1,6 @@
 package com.dan.PlatformGame;
 
+import java.lang.*;
 import com.almasb.fxgl.app.FXGL;
 import com.almasb.fxgl.core.math.FXGLMath;
 import com.almasb.fxgl.entity.Entity;
@@ -25,8 +26,8 @@ public class enemyControl extends Component {
     private AnimationChannel animIdle, animWalk;
 
     public enemyControl() {
-        animIdle = new AnimationChannel("newdude.png", 4, 32, 42, Duration.seconds(1), 1, 1);
-        animWalk = new AnimationChannel("newdude.png", 4, 32, 42, Duration.seconds(1), 0, 3);
+        animIdle = new AnimationChannel("Thwomp.png", 40, 40, 40, Duration.seconds(1), 0, 40);
+        animWalk = new AnimationChannel("Thwomp.png", 40, 40, 40, Duration.seconds(1), 0, 40);
 
         texture = new AnimatedTexture(animIdle);
     }
@@ -50,9 +51,11 @@ public class enemyControl extends Component {
     @Override
     public void onUpdate(double tpf) {
         texture.loopAnimationChannel(isMoving() ? animWalk : animIdle);
-        if (jumpTimer.elapsed(Duration.seconds(3)))
-        {jump();
-        jumpTimer.capture();}
+        if (jumpTimer.elapsed(Duration.seconds(3))) {
+            jump();
+            jumpTimer.capture();
+        }
+
     }
 
     private boolean isMoving() {
