@@ -6,8 +6,6 @@ import com.almasb.fxgl.physics.BoundingShape;
 import com.almasb.fxgl.physics.HitBox;
 import com.almasb.fxgl.physics.PhysicsComponent;
 import com.almasb.fxgl.physics.box2d.dynamics.BodyType;
-import javafx.scene.paint.Color;
-import javafx.scene.shape.Rectangle;
 
 
 public class marioFactory implements EntityFactory {
@@ -65,10 +63,25 @@ public Entity newPlatfrom(SpawnData data) {
         return Entities.builder()
                 .type(PlatformApp.EntityType.PLAYER)
                 .from(data)
-                .viewFromNodeWithBBox(new Rectangle(30,30, Color.BLUE))
+                .viewFromTexture("newdude.png")
                 .with(new CollidableComponent(true))
                 .with(physics)
-                .with(new player1Control())
+                .with(new playerControl())
+                .build();
+    }
+
+    //FIX PLAYER PUSH!!!
+    @Spawns("enemies")
+    public Entity newEnemies(SpawnData data) {
+        PhysicsComponent physics = new PhysicsComponent();
+        physics.setBodyType(BodyType.DYNAMIC);
+        return Entities.builder()
+                .type(PlatformApp.EntityType.ENEMIES)
+                .from(data)
+                .viewFromTexture("newdude.png")
+                .with(new CollidableComponent(true))
+                .with(physics)
+                .with(new enemyControl())
                 .build();
     }
 

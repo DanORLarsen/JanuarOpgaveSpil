@@ -1,8 +1,6 @@
 package com.dan.PlatformGame;
 
 import com.almasb.fxgl.app.GameApplication;
-import com.almasb.fxgl.audio.Music;
-import com.almasb.fxgl.audio.Sound;
 import com.almasb.fxgl.entity.Entity;
 import com.almasb.fxgl.input.UserAction;
 import com.almasb.fxgl.physics.CollisionHandler;
@@ -16,7 +14,7 @@ import java.util.Map;
 
 public class PlatformApp extends GameApplication {
     public enum EntityType {
-        PLAYER, COIN, DOOR, WATER
+        PLAYER, COIN, DOOR, WATER, ENEMIES
     }
     @Override
     protected void initSettings(GameSettings gameSettings) {
@@ -27,6 +25,7 @@ public class PlatformApp extends GameApplication {
         gameSettings.setWidth(15*70);
         gameSettings.setHeight(10*70);
         MyTimerDan.start();
+
     }
 
     private int coins = 0;
@@ -34,6 +33,7 @@ public class PlatformApp extends GameApplication {
     private Entity player;
     private boolean cheater = false;
     private int hitWater = 0;
+    private Entity Enemy;
 
 
 
@@ -42,42 +42,42 @@ public class PlatformApp extends GameApplication {
         getInput().addAction(new UserAction("left") {
             @Override
             protected void onAction() {
-                player.getComponent(player1Control.class).left();
+                player.getComponent(playerControl.class).left();
             }
         }, KeyCode.LEFT);
 
         getInput().addAction(new UserAction("right") {
             @Override
             protected void onAction() {
-                player.getComponent(player1Control.class).right();
+                player.getComponent(playerControl.class).right();
             }
         }, KeyCode.RIGHT);
 
         getInput().addAction(new UserAction("lefta") {
             @Override
             protected void onAction() {
-                player.getComponent(player1Control.class).left();
+                player.getComponent(playerControl.class).left();
             }
         }, KeyCode.A);
 
         getInput().addAction(new UserAction("rightd") {
             @Override
             protected void onAction() {
-                player.getComponent(player1Control.class).right();
+                player.getComponent(playerControl.class).right();
             }
         }, KeyCode.D);
 
         getInput().addAction(new UserAction("jump") {
             @Override
             protected void onAction() {
-                player.getComponent(player1Control.class).jump();
+                player.getComponent(playerControl.class).jump();
             }
         }, KeyCode.SPACE);
 
         getInput().addAction(new UserAction("powerUp") {
             @Override
             protected void onActionEnd() {
-                player.getComponent(player1Control.class).setD(150);
+                player.getComponent(playerControl.class).setMoveSpeed();
                 System.out.println("Cheat activated");
                 cheater = true;
             }
@@ -90,6 +90,7 @@ public class PlatformApp extends GameApplication {
         getGameWorld().addEntityFactory(new marioFactory());
         getGameWorld().setLevelFromMap("MarioLevel-1.json");
         player = getGameWorld().spawn("player",50,400);
+        Enemy = getGameWorld().spawn("enemies",300,400);
         getAudioPlayer().setGlobalSoundVolume(0.12);
         getAudioPlayer().loopBGM("Kevin Macleod Scheming Weasel (faster version).mp3");
         System.out.println(getAudioPlayer().getGlobalSoundVolume());
@@ -102,6 +103,14 @@ public class PlatformApp extends GameApplication {
 
     @Override
     protected void initPhysics() {
+        getPhysicsWorld().addCollisionHandler(new CollisionHandler(PlatformApp.EntityType.PLAYER, EntityType.ENEMIES) {
+
+            // order of types is the same as passed into the constructor
+            @Override
+            protected void onCollisionBegin(Entity players, Entity coin) {
+                player.removeFromWorld();
+                player = getGameWorld().spawn("player",50,400);
+            }});
         getPhysicsWorld().addCollisionHandler(new CollisionHandler(PlatformApp.EntityType.PLAYER, PlatformApp.EntityType.COIN) {
 
             // order of types is the same as passed into the constructor
@@ -151,6 +160,7 @@ public class PlatformApp extends GameApplication {
                         getDisplay().showMessageBox("\uD83D\uDE08 - There is no score icon - \uD83D\uDE08");
                     }
                 }}});}
+
 
     @Override
     protected void initUI() {
