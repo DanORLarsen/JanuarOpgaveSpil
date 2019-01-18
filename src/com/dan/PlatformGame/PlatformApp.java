@@ -20,6 +20,8 @@ public class PlatformApp extends GameApplication {
     }
     @Override
     protected void initSettings(GameSettings gameSettings) {
+        gameSettings.setTitle("Burger Mario");
+        gameSettings.setVersion("0.5");
         gameSettings.setMenuEnabled(false);
         gameSettings.setIntroEnabled(false);
         gameSettings.setWidth(15*70);
@@ -86,10 +88,10 @@ public class PlatformApp extends GameApplication {
     protected void initGame() {
         //Adding my EntityFactory, + map
         getGameWorld().addEntityFactory(new marioFactory());
-        getGameWorld().setLevelFromMap("mario..json");
+        getGameWorld().setLevelFromMap("MarioLevel-1.json");
         player = getGameWorld().spawn("player",50,400);
         getAudioPlayer().setGlobalSoundVolume(0.12);
-        getAudioPlayer().playSound("bensound-theelevatorbossanova.mp3");
+        getAudioPlayer().loopBGM("Kevin Macleod Scheming Weasel (faster version).mp3");
         System.out.println(getAudioPlayer().getGlobalSoundVolume());
     }
 
@@ -152,6 +154,7 @@ public class PlatformApp extends GameApplication {
 
     @Override
     protected void initUI() {
+        getGameScene().setBackgroundRepeat("BackgroundMario.png");
         Text textPixels1 = new Text();
         textPixels1.setTranslateX(50); // x = 50
         textPixels1.setTranslateY(30); // y = 100

@@ -51,7 +51,7 @@ public class BCMapp extends GameApplication {
                     .viewFromTextureWithBBox("burger.png")
                     .with(new CollidableComponent(true))
                     .buildAndAttach(getGameWorld());
-        getAudioPlayer().playSound("bensound-theelevatorbossanova.mp3");
+        getAudioPlayer().loopBGM("bensound-theelevatorbossanova.mp3");
         player1 = Entities.builder()
                 .type(EntityType.PLAYER)
                 .at(200, 200)
@@ -150,9 +150,6 @@ public class BCMapp extends GameApplication {
                 //Til power up player1.getComponent(DudeControl.class).setMoveSpeed(320);
                 getAudioPlayer().playSound("roblox-death-sound-effect-opNTQCf4R.mp3");
                 coinscoreP1++;
-                if (coinscoreP1 == 1){
-
-                }
                 if (coinscoreP1 < 10) //Dont spawn more burgers after reach 10 in score
                 getGameWorld().spawn("coin");
                 coin.removeFromWorld();
@@ -215,9 +212,6 @@ public class BCMapp extends GameApplication {
 
                 getAudioPlayer().playSound("roblox-death-sound-effect-opNTQCf4R.mp3");
                 coinscoreP2++;
-                if (coinscoreP2 == 1){
-
-                }
                 if (coinscoreP2 < 10) //Dont spawn more burgers after reach 10 in score
                     getGameWorld().spawn("coin");
                 coin.removeFromWorld();
