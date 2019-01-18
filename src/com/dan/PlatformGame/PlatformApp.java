@@ -16,7 +16,7 @@ import java.util.Map;
 
 public class PlatformApp extends GameApplication {
     public enum EntityType {
-        PLAYER, COIN, DOOR
+        PLAYER, COIN, DOOR, WATER
     }
     @Override
     protected void initSettings(GameSettings gameSettings) {
@@ -31,6 +31,7 @@ public class PlatformApp extends GameApplication {
     private int notDone = 2;
     private Entity player;
     private boolean cheater = false;
+    private int hitWater = 0;
 
 
 
@@ -111,6 +112,16 @@ public class PlatformApp extends GameApplication {
                 getAudioPlayer().playSound("roblox-death-sound-effect-opNTQCf4R.mp3");
                 coin.removeFromWorld();
     }});
+        getPhysicsWorld().addCollisionHandler(new CollisionHandler(PlatformApp.EntityType.PLAYER, PlatformApp.EntityType.WATER) {
+
+            // order of types is the same as passed into the constructor
+            @Override
+            protected void onCollisionBegin(Entity players, Entity coin) {
+                player.removeFromWorld();
+                hitWater++;
+                player = getGameWorld().spawn("player",50,400);
+            }});
+
         getPhysicsWorld().addCollisionHandler(new CollisionHandler(PlatformApp.EntityType.PLAYER, PlatformApp.EntityType.DOOR) {
             @Override
             protected void onCollisionBegin(Entity player, Entity door) {
@@ -120,6 +131,7 @@ public class PlatformApp extends GameApplication {
                     getDisplay().showMessageBox(MyTimerDan.getStringScore());
                     getDisplay().showMessageBox("Level Complete!", () -> {
                     System.out.println("Dialog closed!");});
+                    System.out.println("you hit the water " + hitWater + " Time(s)");
 
                     if (cheater == true) //If cheats were activated give cheater messsage + playSound
                     {

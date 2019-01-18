@@ -14,12 +14,21 @@ public class marioFactory implements EntityFactory {
     @Spawns("platform")
 public Entity newPlatfrom(SpawnData data) {
     return Entities.builder()
-
             .from(data)
             .bbox(new HitBox(BoundingShape.box(data.<Integer>get("width"),data.<Integer>get("height"))))
             .with(new PhysicsComponent())
             .build();
 }
+    @Spawns("water")
+    public Entity newWater(SpawnData data) {
+        return Entities.builder()
+                .type(PlatformApp.EntityType.WATER)
+                .from(data)
+                .bbox(new HitBox(BoundingShape.box(data.<Integer>get("width"),data.<Integer>get("height"))))
+                .with(new PhysicsComponent())
+                .with(new CollidableComponent(true))
+                .build();
+    }
 /*
     @Spawns("coin")
     public Entity newCoin(SpawnData data) {

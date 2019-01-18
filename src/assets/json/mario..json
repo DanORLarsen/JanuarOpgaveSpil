@@ -16,46 +16,46 @@
          "name":"Object Layer 1",
          "objects":[
                 {
-                 "height":66.6666666666666,
+                 "height":66.6667,
                  "id":5,
                  "name":"platform",
                  "rotation":0,
                  "type":"platform",
                  "visible":true,
-                 "width":137.333333333333,
-                 "x":140.333333333333,
+                 "width":137.333,
+                 "x":140.333,
                  "y":491.5
                 }, 
                 {
-                 "height":69.3333333333333,
+                 "height":69.3333,
                  "id":6,
                  "name":"platform",
                  "rotation":0,
                  "type":"platform",
                  "visible":true,
-                 "width":209.333333333333,
-                 "x":489.833333333333,
+                 "width":209.333,
+                 "x":489.833,
                  "y":631
                 }, 
                 {
-                 "height":6.66666666666663,
+                 "height":6.66667,
                  "id":7,
-                 "name":"platform",
+                 "name":"water",
                  "rotation":0,
-                 "type":"platform",
+                 "type":"water",
                  "visible":true,
-                 "width":66.6666666666667,
-                 "x":421.333333333333,
+                 "width":66.6667,
+                 "x":421.333,
                  "y":692
                 }, 
                 {
-                 "height":6.66666666666663,
+                 "height":6.66667,
                  "id":8,
-                 "name":"platform",
+                 "name":"water",
                  "rotation":0,
-                 "type":"platform",
+                 "type":"water",
                  "visible":true,
-                 "width":69.3333333333333,
+                 "width":69.3333,
                  "x":700,
                  "y":692
                 }, 
@@ -68,18 +68,18 @@
                  "visible":true,
                  "width":279,
                  "x":771,
-                 "y":632.166666666667
+                 "y":632.167
                 }, 
                 {
-                 "height":45.3333333333334,
+                 "height":45.3333,
                  "id":18,
                  "name":"",
                  "rotation":0,
                  "type":"coin",
                  "visible":true,
-                 "width":45.3333333333334,
-                 "x":848.666666666667,
-                 "y":507.333333333333
+                 "width":45.3333,
+                 "x":848.667,
+                 "y":507.333
                 }, 
                 {
                  "height":66.6667,
@@ -89,8 +89,8 @@
                  "type":"platform",
                  "visible":true,
                  "width":418.667,
-                 "x":1.33316666666668,
-                 "y":631.999983333333
+                 "x":1.33317,
+                 "y":632
                 }, 
                 {
                  "height":66.6667,
@@ -99,9 +99,9 @@
                  "rotation":0,
                  "type":"platform",
                  "visible":true,
-                 "width":210.666333333333,
-                 "x":350.666833333333,
-                 "y":421.333316666667
+                 "width":210.666,
+                 "x":350.667,
+                 "y":421.333
                 }, 
                 {
                  "height":45.3333,
@@ -111,8 +111,8 @@
                  "type":"coin",
                  "visible":true,
                  "width":45.3333,
-                 "x":636.000016666667,
-                 "y":438.666683333333
+                 "x":636,
+                 "y":438.667
                 }, 
                 {
                  "height":45.3333,
@@ -122,8 +122,8 @@
                  "type":"coin",
                  "visible":true,
                  "width":45.3333,
-                 "x":430.666683333333,
-                 "y":364.000016666667
+                 "x":430.667,
+                 "y":364
                 }, 
                 {
                  "height":45.3333,
@@ -133,8 +133,8 @@
                  "type":"coin",
                  "visible":true,
                  "width":45.3333,
-                 "x":217.33335,
-                 "y":437.33335
+                 "x":217.333,
+                 "y":437.333
                 }, 
                 {
                  "height":132,
@@ -143,8 +143,8 @@
                  "rotation":0,
                  "type":"door",
                  "visible":true,
-                 "width":65.3333333333333,
-                 "x":981.333333333333,
+                 "width":65.3333,
+                 "x":981.333,
                  "y":500
                 }, 
                 {
@@ -155,19 +155,19 @@
                  "type":"coin",
                  "visible":true,
                  "width":45.3333,
-                 "x":12.0000166666667,
+                 "x":12,
                  "y":9.33335
                 }, 
                 {
-                 "height":700.000333333333,
+                 "height":700,
                  "id":33,
                  "name":"platform",
                  "rotation":0,
                  "type":"platform",
                  "visible":true,
-                 "width":1.33333333333333,
-                 "x":-5.66666666666668,
-                 "y":-0.333500000000043
+                 "width":1.33333,
+                 "x":-5.66667,
+                 "y":-0.3335
                 }, 
                 {
                  "height":700,
@@ -177,19 +177,19 @@
                  "type":"platform",
                  "visible":true,
                  "width":1.33333,
-                 "x":1050.66666833333,
-                 "y":1.4210854715202e-14
+                 "x":1050.67,
+                 "y":1.42109e-14
                 }, 
                 {
-                 "height":1.4210854715202e-14,
+                 "height":1.42109e-14,
                  "id":35,
                  "name":"platform",
                  "rotation":0,
                  "type":"platform",
                  "visible":true,
-                 "width":1050.66666333333,
-                 "x":0.666668333333405,
-                 "y":-3.66666666666666
+                 "width":1050.67,
+                 "x":0.666668,
+                 "y":-3.66667
                 }],
          "opacity":1,
          "type":"objectgroup",
