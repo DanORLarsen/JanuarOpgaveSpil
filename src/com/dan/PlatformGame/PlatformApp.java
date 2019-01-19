@@ -53,14 +53,14 @@ public class PlatformApp extends GameApplication {
             }
         }, KeyCode.RIGHT);
 
-        getInput().addAction(new UserAction("lefta") {
+        getInput().addAction(new UserAction("leftA") {
             @Override
             protected void onAction() {
                 player.getComponent(playerControl.class).left();
             }
         }, KeyCode.A);
 
-        getInput().addAction(new UserAction("rightd") {
+        getInput().addAction(new UserAction("rightD") {
             @Override
             protected void onAction() {
                 player.getComponent(playerControl.class).right();
@@ -71,18 +71,26 @@ public class PlatformApp extends GameApplication {
             @Override
             protected void onActionBegin() {
                 //For double/triple jump maybe?  System.out.println(player.isColliding(platform)); (if collide -  jumpcounter = 0;) else only double jump
-                if (jumpCounter < 4) {
-                    jumpCounter++;
-                    player.getComponent(playerControl.class).jump();
-                    if (jumpCounter > 3) {
-                        player.getComponent(playerControl.class).jump();
-                        getMasterTimer().runOnceAfter(() -> {
-                            jumpCounter = 0;
-                        }, Duration.seconds(0.50));
-                    }
-                }
-        }
+                d();
+            }
         }, KeyCode.SPACE);
+
+        getInput().addAction(new UserAction("jumpW") {
+            @Override
+            protected void onActionBegin() {
+                //For double/triple jump maybe?  System.out.println(player.isColliding(platform)); (if collide -  jumpcounter = 0;) else only double jump
+                d();
+            }
+        }, KeyCode.W);
+
+        getInput().addAction(new UserAction("jumpUp") {
+            @Override
+            protected void onActionBegin() {
+                //For double/triple jump maybe?  System.out.println(player.isColliding(platform)); (if collide -  jumpcounter = 0;) else only double jump
+                d();
+            }
+        }, KeyCode.UP);
+
 
         getInput().addAction(new UserAction("powerUp") {
             @Override
@@ -92,6 +100,19 @@ public class PlatformApp extends GameApplication {
                 cheater = true;
             }
         }, KeyCode.O);
+    }
+
+    private void d() {
+        if (jumpCounter < 4) {
+            jumpCounter++;
+            player.getComponent(playerControl.class).jump();
+            if (jumpCounter > 3) {
+                player.getComponent(playerControl.class).jump();
+                getMasterTimer().runOnceAfter(() -> {
+                    jumpCounter = 0;
+                }, Duration.seconds(0.50));
+            }
+        }
     }
 
     @Override
