@@ -15,7 +15,7 @@ import java.util.Map;
 
 public class PlatformApp extends GameApplication {
     public enum EntityType {
-        PLAYER, COIN, DOOR, WATER, ENEMIES
+        PLAYER, COIN, DOOR, WATER, ENEMIES, PLATFORM
     }
     @Override
     protected void initSettings(GameSettings gameSettings) {
@@ -28,7 +28,6 @@ public class PlatformApp extends GameApplication {
         MyTimerDan.start();
 
     }
-
     private int coins = 0;
     private int notDone = 2;
     private Entity player;
@@ -36,7 +35,6 @@ public class PlatformApp extends GameApplication {
     private int hitWater = 0;
     private Entity Enemy;
     private int jumpCounter = 0;
-
 
 
     @Override
@@ -72,7 +70,7 @@ public class PlatformApp extends GameApplication {
         getInput().addAction(new UserAction("jump") {
             @Override
             protected void onActionBegin() {
-
+                //For double/triple jump maybe?  System.out.println(player.isColliding(platform)); (if collide -  jumpcounter = 0;) else only double jump
                 if (jumpCounter < 4) {
                     jumpCounter++;
                     player.getComponent(playerControl.class).jump();
@@ -80,7 +78,7 @@ public class PlatformApp extends GameApplication {
                         player.getComponent(playerControl.class).jump();
                         getMasterTimer().runOnceAfter(() -> {
                             jumpCounter = 0;
-                        }, Duration.seconds(0.70));
+                        }, Duration.seconds(0.50));
                     }
                 }
         }
@@ -103,6 +101,7 @@ public class PlatformApp extends GameApplication {
         getGameWorld().setLevelFromMap("MarioLevel-1.json");
         player = getGameWorld().spawn("player",50,400);
         Enemy = getGameWorld().spawn("enemies",300, 400);
+        Enemy.getComponent(enemyControl.class).jump();
         getAudioPlayer().setGlobalSoundVolume(0.12);
         getAudioPlayer().loopBGM("Kevin Macleod Scheming Weasel (faster version).mp3");
         System.out.println(getAudioPlayer().getGlobalSoundVolume());
@@ -182,13 +181,13 @@ public class PlatformApp extends GameApplication {
     protected void initUI() {
         getGameScene().setBackgroundRepeat("BackgroundMario.png");
         Text textPixels1 = new Text();
-        textPixels1.setTranslateX(50); // x = 50
-        textPixels1.setTranslateY(30); // y = 100
+        textPixels1.setTranslateX(50);
+        textPixels1.setTranslateY(30);
         getGameScene().addUINode(textPixels1); // add to the scene graph
 
         Text textPixels2 = new Text();
-        textPixels2.setTranslateX(920); // x = 50
-        textPixels2.setTranslateY(20); // y = 100
+        textPixels2.setTranslateX(920);
+        textPixels2.setTranslateY(20);
         getGameScene().addUINode(textPixels2);
 
         textPixels2.textProperty().bind(getGameState().stringProperty("hints"));

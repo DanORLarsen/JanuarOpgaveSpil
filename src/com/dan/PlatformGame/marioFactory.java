@@ -10,11 +10,13 @@ import com.almasb.fxgl.physics.box2d.dynamics.BodyType;
 
 public class marioFactory implements EntityFactory {
     @Spawns("platform")
-public Entity newPlatfrom(SpawnData data) {
+public Entity newPlatform(SpawnData data) {
     return Entities.builder()
+            .type(MarioType.PLATFORM)
             .from(data)
             .bbox(new HitBox(BoundingShape.box(data.<Integer>get("width"),data.<Integer>get("height"))))
             .with(new PhysicsComponent())
+            .with(new CollidableComponent(true))
             .build();
 }
     @Spawns("water")
