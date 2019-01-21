@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" tiledversion="1.0.1" orientation="orthogonal" renderorder="right-down" width="15" height="10" tilewidth="70" tileheight="70" nextobjectid="36">
+ <tileset firstgid="1" name="tiles_spritesheet" tilewidth="70" tileheight="70" spacing="2" tilecount="156" columns="12">
+  <image source="tiles_spritesheet.png" width="914" height="936"/>
+ </tileset>
+ <layer name="Tile Layer 1" width="15" height="10">
+  <data encoding="csv">
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,129,104,105,0,0,0,0,0,0,0,
+0,0,129,105,0,0,0,0,0,0,0,0,0,0,46,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,58,
+104,104,104,104,104,104,103,104,104,104,103,104,104,104,104
+</data>
+ </layer>
+ <objectgroup name="Object Layer 1">
+  <object id="5" name="platform" type="platform" x="140.333" y="491.5" width="137.333" height="66.6667"/>
+  <object id="6" name="platform" type="platform" x="489.833" y="631" width="209.333" height="69.3333"/>
+  <object id="7" name="water" type="water" x="421.333" y="692" width="66.6667" height="6.66667"/>
+  <object id="8" name="water" type="water" x="700" y="692" width="69.3333" height="6.66667"/>
+  <object id="9" name="platform" type="platform" x="771" y="632.167" width="279" height="68"/>
+  <object id="18" type="coin" x="848.667" y="507.333" width="45.3333" height="45.3333"/>
+  <object id="20" name="platform" type="platform" x="1.33317" y="632" width="418.667" height="66.6667"/>
+  <object id="21" name="platform" type="platform" x="350.667" y="421.333" width="210.666" height="66.6667"/>
+  <object id="25" type="coin" x="636" y="438.667" width="45.3333" height="45.3333"/>
+  <object id="26" type="coin" x="430.667" y="364" width="45.3333" height="45.3333"/>
+  <object id="27" type="coin" x="217.333" y="437.333" width="45.3333" height="45.3333"/>
+  <object id="28" type="door" x="981.333" y="500" width="65.3333" height="132"/>
+  <object id="31" type="coin" x="12" y="9.33335" width="45.3333" height="45.3333"/>
+  <object id="33" name="platform" type="platform" x="-5.66667" y="-0.3335" width="1.33333" height="700"/>
+  <object id="34" name="platform" type="platform" x="1050.67" y="1.42109e-14" width="1.33333" height="700"/>
+  <object id="35" name="platform" type="platform" x="0.666668" y="-3.66667" width="1050.67" height="1.42109e-14"/>
+ </objectgroup>
+</map>
