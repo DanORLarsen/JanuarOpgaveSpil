@@ -22,8 +22,8 @@ public class playerControl extends Component {
     private AnimationChannel animIdle, animWalk;
 
     public playerControl() {
-        animIdle = new AnimationChannel("newdude.png", 4, 32, 42, Duration.seconds(1), 1, 1);
-        animWalk = new AnimationChannel("newdude.png", 4, 32, 42, Duration.seconds(1), 0, 3);
+        animIdle = new AnimationChannel("TrumpAfk.png", 55, 55, 50, Duration.seconds(1), 0, 3);
+        animWalk = new AnimationChannel("trumpWalk.png", 55, 55, 50, Duration.seconds(1), 0, 3);
 
         texture = new AnimatedTexture(animIdle);
     }

@@ -9,7 +9,8 @@ import com.dan.GameApp1D.MyTimerDan;
 import javafx.scene.input.KeyCode;
 import javafx.scene.text.Text;
 import javafx.util.Duration;
-
+//--module-path C:\Program Files\Java\javafx-sdk-11.0.2\lib --add-modules=javafx.controls,javafx.graphics,javafx.media,javafx.fxml,javafx.fxml
+//"C:\Program Files\Java\jdk-11.0.1\bin\java.exe" --module-path %PATH_TO_FX% --add-modules=javafx.controls,javafx.fxml
 import java.util.Map;
 //TO DO: Add Camera + lvls and animated sprite
 
@@ -174,6 +175,7 @@ public class PlatformApp extends GameApplication {
                     getDisplay().showMessageBox(MyTimerDan.getStringScore());
                     getDisplay().showMessageBox("Level Complete!", () -> {
                     System.out.println("Dialog closed!");});
+
                     System.out.println("you hit the water " + hitWater + " Time(s)");
 
                     if (cheater == true) //If cheats were activated give cheater messsage + playSound

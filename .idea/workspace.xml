@@ -1,0 +1,975 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="Added animations + enemy type with Death on collision&#10;Added Jump limiter (No flying jump) (Still trying to get Collide with platform)&#10;Import Everything pc switch." />
+    <ignored path="JavaFxApplication.iws" />
+    <ignored path=".idea/workspace.xml" />
+    <ignored path="$PROJECT_DIR$/out/" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CreatePatchCommitExecutor">
+    <option name="PATCH_PATH" value="" />
+  </component>
+  <component name="DebuggerManager">
+    <breakpoint_any default_suspend_policy="SuspendAll" default_condition_enabled="true" converted="true">
+      <breakpoint>
+        <option name="NOTIFY_CAUGHT" value="true" />
+        <option name="NOTIFY_UNCAUGHT" value="true" />
+        <option name="ENABLED" value="false" />
+        <option name="LOG_ENABLED" value="false" />
+        <option name="LOG_EXPRESSION_ENABLED" value="false" />
+        <option name="SUSPEND_POLICY" value="SuspendAll" />
+        <option name="SUSPEND" value="true" />
+        <option name="COUNT_FILTER_ENABLED" value="false" />
+        <option name="COUNT_FILTER" value="0" />
+        <option name="CONDITION_ENABLED" value="true" />
+        <option name="CLASS_FILTERS_ENABLED" value="false" />
+        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
+        <option name="CONDITION" value="" />
+        <option name="LOG_MESSAGE" value="" />
+      </breakpoint>
+      <breakpoint>
+        <option name="NOTIFY_CAUGHT" value="true" />
+        <option name="NOTIFY_UNCAUGHT" value="true" />
+        <option name="ENABLED" value="false" />
+        <option name="LOG_ENABLED" value="false" />
+        <option name="LOG_EXPRESSION_ENABLED" value="false" />
+        <option name="SUSPEND_POLICY" value="SuspendAll" />
+        <option name="SUSPEND" value="true" />
+        <option name="COUNT_FILTER_ENABLED" value="false" />
+        <option name="COUNT_FILTER" value="0" />
+        <option name="CONDITION_ENABLED" value="true" />
+        <option name="CLASS_FILTERS_ENABLED" value="false" />
+        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
+        <option name="CONDITION" value="" />
+        <option name="LOG_MESSAGE" value="" />
+      </breakpoint>
+    </breakpoint_any>
+    <ui_properties converted="true" />
+    <breakpoint_rules converted="true" />
+  </component>
+  <component name="FavoritesManager">
+    <favorites_list name="JavaFxApplication" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/dan/PlatformGame/PlatformApp.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="2528">
+              <caret line="177" selection-start-line="177" selection-end-line="177" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/dan/PlatformGame/MarioType.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="112">
+              <caret line="11" column="8" selection-start-line="11" selection-start-column="8" selection-end-line="11" selection-end-column="8" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/dan/PlatformGame/marioFactory.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="992">
+              <caret line="67" column="42" selection-start-line="67" selection-start-column="42" selection-end-line="67" selection-end-column="42" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/com/dan/PlatformGame/playerControl.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="832">
+              <caret line="60" column="33" selection-start-line="60" selection-start-column="33" selection-end-line="60" selection-end-column="33" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#558#559#0" expanded="true" />
+                <element signature="e#588#589#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/assets/textures/tiles_spritesheet.png">
+          <provider selected="true" editor-type-id="images" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/assets/textures/TrumpSprite.JPG">
+          <provider selected="true" editor-type-id="images" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/dan/PlatformGame/enemyControl.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="288">
+              <caret line="29" column="92" selection-start-line="29" selection-start-column="92" selection-end-line="29" selection-end-column="92" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#684#685#0" expanded="true" />
+                <element signature="e#714#715#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>gameScene</find>
+      <find>textPixels</find>
+      <find>tpf</find>
+      <find>Factory</find>
+      <find>ben</find>
+      <find>Door</find>
+      <find>NiceGuy</find>
+      <find>mario.</find>
+      <find>player.png</find>
+      <find>pl</find>
+      <find>duratio</find>
+      <find>master</find>
+      <find>timer</find>
+      <find>run</find>
+      <find>d()</find>
+    </findStrings>
+  </component>
+  <component name="FindManager">
+    <FindUsagesManager>
+      <setting name="OPEN_NEW_TAB" value="false" />
+    </FindUsagesManager>
+  </component>
+  <component name="Git.Settings">
+    <option name="ROOT_SYNC" value="DONT_SYNC" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/src/assets/textures/sounds/GameApp.java" />
+        <option value="$PROJECT_DIR$/src/MyTimerDan.java" />
+        <option value="$PROJECT_DIR$/src/CoinSpawner.java" />
+        <option value="$PROJECT_DIR$/src/CoinSpawnerFactory.java" />
+        <option value="$PROJECT_DIR$/src/GameApp.java" />
+        <option value="$PROJECT_DIR$/src/com/dan/GameApp1D/GameApp.java" />
+        <option value="$PROJECT_DIR$/src/com/dan/GameApp1D/CoinSpawnerFactory.java" />
+        <option value="$PROJECT_DIR$/src/com/dan/PlatformGame/PlatfromApp.java" />
+        <option value="$PROJECT_DIR$/src/com/dan/GameApp1D/MyTimerDan.java" />
+        <option value="$PROJECT_DIR$/src/com/dan/PlatformGame/player1Control.java" />
+        <option value="$PROJECT_DIR$/src/com/dan/PlatformGame/enemyControl.java" />
+        <option value="$PROJECT_DIR$/src/com/dan/GameApp1D/BCMapp.java" />
+        <option value="$PROJECT_DIR$/src/com/dan/PlatformGame/marioType.java" />
+        <option value="$PROJECT_DIR$/src/com/dan/PlatformGame/PlatformApp.java" />
+        <option value="$PROJECT_DIR$/src/com/dan/PlatformGame/marioFactory.java" />
+        <option value="$PROJECT_DIR$/src/com/dan/PlatformGame/playerControl.java" />
+      </list>
+    </option>
+  </component>
+  <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
+  <component name="ProjectFrameBounds" extendedState="7">
+    <option name="x" value="36" />
+    <option name="width" value="960" />
+    <option name="height" value="1040" />
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectReloadState">
+    <option name="STATE" value="0" />
+  </component>
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="PackagesPane" />
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="JanuarOpgaveSpil" type="b2602c69:ProjectViewProjectNode" />
+              <item name="JanuarOpgaveSpil" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="JanuarOpgaveSpil" type="b2602c69:ProjectViewProjectNode" />
+              <item name="JanuarOpgaveSpil" type="462c0819:PsiDirectoryNode" />
+              <item name=".idea" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="JanuarOpgaveSpil" type="b2602c69:ProjectViewProjectNode" />
+              <item name="JanuarOpgaveSpil" type="462c0819:PsiDirectoryNode" />
+              <item name=".idea" type="462c0819:PsiDirectoryNode" />
+              <item name="libraries" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="JanuarOpgaveSpil" type="b2602c69:ProjectViewProjectNode" />
+              <item name="JanuarOpgaveSpil" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="JanuarOpgaveSpil" type="b2602c69:ProjectViewProjectNode" />
+              <item name="JanuarOpgaveSpil" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="assets" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="JanuarOpgaveSpil" type="b2602c69:ProjectViewProjectNode" />
+              <item name="JanuarOpgaveSpil" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="assets" type="462c0819:PsiDirectoryNode" />
+              <item name="json" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="JanuarOpgaveSpil" type="b2602c69:ProjectViewProjectNode" />
+              <item name="JanuarOpgaveSpil" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="assets" type="462c0819:PsiDirectoryNode" />
+              <item name="music" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="JanuarOpgaveSpil" type="b2602c69:ProjectViewProjectNode" />
+              <item name="JanuarOpgaveSpil" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="assets" type="462c0819:PsiDirectoryNode" />
+              <item name="sounds" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="JanuarOpgaveSpil" type="b2602c69:ProjectViewProjectNode" />
+              <item name="JanuarOpgaveSpil" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="assets" type="462c0819:PsiDirectoryNode" />
+              <item name="textures" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="JanuarOpgaveSpil" type="b2602c69:ProjectViewProjectNode" />
+              <item name="JanuarOpgaveSpil" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="dan" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="JanuarOpgaveSpil" type="b2602c69:ProjectViewProjectNode" />
+              <item name="JanuarOpgaveSpil" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="dan" type="462c0819:PsiDirectoryNode" />
+              <item name="GameApp1D" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="JanuarOpgaveSpil" type="b2602c69:ProjectViewProjectNode" />
+              <item name="JanuarOpgaveSpil" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="dan" type="462c0819:PsiDirectoryNode" />
+              <item name="GameApp1D" type="462c0819:PsiDirectoryNode" />
+              <item name="BCMapp.java" type="529ef68f:ClassesTreeStructureProvider$PsiClassOwnerTreeNode" />
+            </path>
+            <path>
+              <item name="JanuarOpgaveSpil" type="b2602c69:ProjectViewProjectNode" />
+              <item name="JanuarOpgaveSpil" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="dan" type="462c0819:PsiDirectoryNode" />
+              <item name="PlatformGame" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="JanuarOpgaveSpil" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="Scope" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="GoToClass.includeLibraries" value="false" />
+    <property name="GoToClass.toSaveIncludeLibraries" value="false" />
+    <property name="GoToFile.includeJavaFiles" value="false" />
+    <property name="MemberChooser.copyJavadoc" value="false" />
+    <property name="MemberChooser.showClasses" value="true" />
+    <property name="MemberChooser.sorted" value="false" />
+    <property name="OverrideImplement.combined" value="false" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1548370201347" />
+    <property name="dynamic.classpath" value="false" />
+    <property name="last_opened_file_path" value="C:/Program Files/Git/git-cmd.exe" />
+    <property name="project.structure.last.edited" value="Libraries" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="recentsLimit" value="5" />
+    <property name="settings.editor.selected.configurable" value="vcs.Git" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Dan\IdeaProjects\JanuarOpgaveSpil\src\assets\music" />
+      <recent name="C:\Users\Dan\IdeaProjects\JanuarOpgaveSpil\src\assets\json" />
+      <recent name="C:\Users\Dan\IdeaProjects\JanuarOpgaveSpil\src\assets\textures" />
+      <recent name="C:\Users\Dan\IdeaProjects\JanuarOpgaveSpil\src" />
+      <recent name="C:\Users\Dan\IdeaProjects\JanuarOpgaveSpil\assets" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Dan\IdeaProjects\JanuarOpgaveSpil\src\assets\sounds" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager" selected="Application.PlatformApp">
+    <configuration default="true" type="DartUnitRunConfigurationType" factoryName="DartUnit">
+      <option name="VMOptions" />
+      <option name="arguments" />
+      <option name="filePath" />
+      <option name="scope" value="ALL" />
+      <option name="testName" />
+      <method />
+    </configuration>
+    <configuration name="&lt;template&gt;" type="WebApp" default="true" selected="false">
+      <Host>localhost</Host>
+      <Port>5050</Port>
+    </configuration>
+    <configuration default="true" type="Applet">
+      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="BCMapp" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.dan.GameApp1D.BCMapp" />
+      <module name="JanuarOpgaveSpil" />
+      <option name="VM_PARAMETERS" value="--module-path ${PATH_TO_FX} --add-modules=javafx.controls,javafx.graphics,javafx.media,javafx.fxml" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Main" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="sample.Main" />
+      <module name="JanuarOpgaveSpil" />
+      <option name="VM_PARAMETERS" value="--module-path C:\Users\Dan\Downloads\javafx-sdk-11.0.1\lib --add-modules=javafx.controls" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="sample.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper RunnerId="Run" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="PlatformApp" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.dan.PlatformGame.PlatformApp" />
+      <module name="JanuarOpgaveSpil" />
+      <option name="VM_PARAMETERS" value="--module-path ${PATH_TO_FX} --add-modules=javafx.controls,javafx.graphics,javafx.media,javafx.fxml" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.dan.PlatformGame.PlayerControl" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="Application" factoryName="Application">
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="JUnit" factoryName="JUnit">
+      <option name="TEST_OBJECT" value="class" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="moduleWithDependencies" />
+      </option>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="TestNG">
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="moduleWithDependencies" />
+      </option>
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType">
+      <module name="" />
+      <option name="VM_PARAMETERS" value="-Xmx512m -Xms256m -XX:MaxPermSize=250m" />
+      <option name="PROGRAM_PARAMETERS" />
+      <predefined_log_file enabled="true" id="idea.log" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="Application.Main" />
+      <item itemvalue="Application.BCMapp" />
+      <item itemvalue="Application.PlatformApp" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.PlatformApp" />
+        <item itemvalue="Application.BCMapp" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="" />
+      <created>1359379246138</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1359379246138</updated>
+      <workItem from="1359379250712" duration="1302000" />
+      <workItem from="1547123553356" duration="8498000" />
+      <workItem from="1547298661735" duration="11259000" />
+      <workItem from="1547311611080" duration="1428000" />
+      <workItem from="1547314468557" duration="3732000" />
+      <workItem from="1547321711616" duration="519000" />
+      <workItem from="1547733852237" duration="12550000" />
+      <workItem from="1547765249072" duration="1596000" />
+      <workItem from="1547826878541" duration="1214000" />
+      <workItem from="1547829822246" duration="1038000" />
+      <workItem from="1547834767511" duration="1534000" />
+      <workItem from="1547837045532" duration="19486000" />
+      <workItem from="1548079090319" duration="172000" />
+      <workItem from="1548366321412" duration="3868000" />
+      <workItem from="1548370237168" duration="292000" />
+    </task>
+    <task id="LOCAL-00001" summary="Disabled into and menu">
+      <created>1547126616642</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1547126616642</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Added 10 score end game, (out commented for now) (initPhysics)">
+      <created>1547128054370</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1547128054370</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Added 10 score end game, (out commented for now) (initPhysics)&#10;+Added sound">
+      <created>1547129319010</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1547129319010</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Added 10 score end game, (out commented for now) (initPhysics)&#10;+Added sound">
+      <created>1547131713675</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1547131713675</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Added win at 10 score, need to add seperate scores">
+      <created>1547299611731</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1547299611731</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Now only one coin is on the map at a time, need to add seperate scores">
+      <created>1547300493097</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1547300493097</updated>
+    </task>
+    <task id="LOCAL-00007" summary="added background picture, need to add seperate scores">
+      <created>1547302153856</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1547302153856</updated>
+    </task>
+    <task id="LOCAL-00008" summary="added background picture, need to add seperate scores">
+      <created>1547302211214</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1547302211214</updated>
+    </task>
+    <task id="LOCAL-00009" summary="Somehow im missing scoreboard now">
+      <created>1547303647336</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1547303647336</updated>
+    </task>
+    <task id="LOCAL-00010" summary="Scoreboard appeared, now working on seperate scores (collision handler)">
+      <created>1547308345102</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1547308345102</updated>
+    </task>
+    <task id="LOCAL-00011" summary="New sprites, + increase speed. still need to add seperate score for players">
+      <created>1547309543040</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1547309543040</updated>
+    </task>
+    <task id="LOCAL-00012" summary="New sprites, + increase speed. still need to add seperate score for players&#10;+ added texture to git">
+      <created>1547309689806</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1547309689806</updated>
+    </task>
+    <task id="LOCAL-00013" summary="Fix seperate scores.&#10;Added package for PlatformGame">
+      <created>1547309985566</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1547309985566</updated>
+    </task>
+    <task id="LOCAL-00014" summary="Fix seperate scores. (Outcommented seconds scoreboard for now)&#10;Added package for PlatformGame">
+      <created>1547311228814</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1547311228814</updated>
+    </task>
+    <task id="LOCAL-00015" summary="Fix seperate scores. (Outcommented seconds scoreboard for now)&#10;added winner text&#10;Added package for PlatformGame">
+      <created>1547313026229</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1547313026229</updated>
+    </task>
+    <task id="LOCAL-00016" summary="TO DO: &quot;Add powerups&quot;&#10;Fixed scoreboards, &#10;added winner text&#10;Added package for PlatformGame">
+      <created>1547315265355</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1547315265355</updated>
+    </task>
+    <task id="LOCAL-00017" summary="Added powerups, Done with GameApp1D&#10;Moving on to PlatformGame">
+      <created>1547321017284</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1547321017284</updated>
+    </task>
+    <task id="LOCAL-00018" summary="Added powerups, Done with GameApp1D&#10;Moving on to PlatformGame">
+      <created>1547321913853</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1547321913853</updated>
+    </task>
+    <task id="LOCAL-00019" summary="Added powerups, Done with GameApp1D&#10;Moving on to PlatformGame">
+      <created>1547322226681</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1547322226681</updated>
+    </task>
+    <task id="LOCAL-00020" summary="Made 1 level of PlatformGame">
+      <created>1547744785732</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1547744785732</updated>
+    </task>
+    <task id="LOCAL-00021" summary="Added to DO.">
+      <created>1547761235383</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1547761235383</updated>
+    </task>
+    <task id="LOCAL-00022" summary="Added to DO.&#10;Added hint + cheats">
+      <created>1547763701278</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1547763701278</updated>
+    </task>
+    <task id="LOCAL-00023" summary="Added to DO.&#10;Added hint + cheats">
+      <created>1547764048653</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1547764048653</updated>
+    </task>
+    <task id="LOCAL-00024" summary="Added to DO.&#10;Added hint + cheats">
+      <created>1547764829763</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1547764829763</updated>
+    </task>
+    <task id="LOCAL-00025" summary="Added to DO.&#10;Added hint + cheats">
+      <created>1547766369953</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1547766369953</updated>
+    </task>
+    <task id="LOCAL-00026" summary="Added to DO.&#10;Added hint + cheats">
+      <created>1547767119061</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1547767119061</updated>
+    </task>
+    <task id="LOCAL-00027" summary="Added to DO.&#10;Added hint + cheats&#10;Added waterCollide event.">
+      <created>1547830586296</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1547830586297</updated>
+    </task>
+    <task id="LOCAL-00028" summary="Added to DO.&#10;Added looping music + cleanup">
+      <created>1547836358479</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1547836358479</updated>
+    </task>
+    <task id="LOCAL-00029" summary="Added to DO.&#10;Added looping music + cleanup">
+      <created>1547842258888</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1547842258888</updated>
+    </task>
+    <task id="LOCAL-00030" summary="Added animations + enemy type with Death on collision&#10;Added Jump limiter (No flying jump)">
+      <created>1547853599346</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1547853599346</updated>
+    </task>
+    <task id="LOCAL-00031" summary="Added animations + enemy type with Death on collision&#10;Added Jump limiter (No flying jump) (Still trying to get Collide with platform)">
+      <created>1547856617466</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1547856617466</updated>
+    </task>
+    <task id="LOCAL-00032" summary="Added animations + enemy type with Death on collision&#10;Added Jump limiter (No flying jump) (Still trying to get Collide with platform)">
+      <created>1547856918035</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1547856918035</updated>
+    </task>
+    <task id="LOCAL-00033" summary="Added animations + enemy type with Death on collision&#10;Added Jump limiter (No flying jump) (Still trying to get Collide with platform)&#10;Import Everything pc switch.">
+      <created>1548079191830</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1548079191830</updated>
+    </task>
+    <option name="localTasksCounter" value="34" />
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="68488000" />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-4" y="-4" width="1928" height="1044" extended-state="7" />
+    <layout>
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.6703755" visible="true" weight="0.23535676" />
+      <window_info id="Structure" order="1" weight="0.25" />
+      <window_info id="Favorites" order="2" weight="0.32995737" />
+      <window_info id="Designer" order="3" />
+      <window_info id="Image Layers" order="4" />
+      <window_info id="UI Designer" order="5" />
+      <window_info id="Capture Tool" order="6" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.26457882" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.32181427" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.3991323" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Application Servers" order="7" />
+      <window_info anchor="bottom" id="Version Control" order="8" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Problems" order="9" />
+      <window_info anchor="bottom" id="Changes" order="10" />
+      <window_info anchor="bottom" id="Profiler" order="11" />
+      <window_info anchor="bottom" id="Event Log" order="12" />
+      <window_info anchor="bottom" id="Messages" order="13" weight="0.32937366" />
+      <window_info anchor="bottom" id="Database Changes" order="14" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Terminal" order="15" weight="0.329718" />
+      <window_info anchor="bottom" id="Docker" order="16" show_stripe_button="false" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="JetGradle" order="3" />
+      <window_info anchor="right" id="Database" order="4" />
+      <window_info anchor="right" id="Palette" order="5" />
+      <window_info anchor="right" id="Maven Projects" order="6" />
+      <window_info anchor="right" id="Capture Analysis" order="7" />
+      <window_info anchor="right" id="Palette&#9;" order="8" />
+      <window_info anchor="right" id="Theme Preview" order="9" />
+      <window_info anchor="right" id="Maven" order="10" />
+    </layout>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="OFFER_MOVE_TO_ANOTHER_CHANGELIST_ON_PARTIAL_COMMIT" value="true" />
+    <option name="INCLUDE_TEXT_INTO_SHELF" value="false" />
+    <MESSAGE value="Disabled into and menu" />
+    <MESSAGE value="Added 10 score end game, (out commented for now) (initPhysics)" />
+    <MESSAGE value="Added 10 score end game, (out commented for now) (initPhysics)&#10;+Added sound" />
+    <MESSAGE value="Added win at 10 score, need to add seperate scores" />
+    <MESSAGE value="Now only one coin is on the map at a time, need to add seperate scores" />
+    <MESSAGE value="added background picture, need to add seperate scores" />
+    <MESSAGE value="Somehow im missing scoreboard now" />
+    <MESSAGE value="Scoreboard appeared, now working on seperate scores (collision handler)" />
+    <MESSAGE value="New sprites, + increase speed. still need to add seperate score for players" />
+    <MESSAGE value="New sprites, + increase speed. still need to add seperate score for players&#10;+ added texture to git" />
+    <MESSAGE value="Fix seperate scores.&#10;Added package for PlatformGame" />
+    <MESSAGE value="Fix seperate scores. (Outcommented seconds scoreboard for now)&#10;Added package for PlatformGame" />
+    <MESSAGE value="Fix seperate scores. (Outcommented seconds scoreboard for now)&#10;added winner text&#10;Added package for PlatformGame" />
+    <MESSAGE value="TO DO: &quot;Add powerups&quot;&#10;Fixed scoreboards, &#10;added winner text&#10;Added package for PlatformGame" />
+    <MESSAGE value="Added powerups, Done with GameApp1D&#10;Moving on to PlatformGame" />
+    <MESSAGE value="Made 1 level of PlatformGame" />
+    <MESSAGE value="Added to DO." />
+    <MESSAGE value="Added to DO.&#10;Added hint + cheats" />
+    <MESSAGE value="Added to DO.&#10;Added hint + cheats&#10;Added waterCollide event." />
+    <MESSAGE value="Added to DO.&#10;Added looping music + cleanup" />
+    <MESSAGE value="Added animations + enemy type with Death on collision&#10;Added Jump limiter (No flying jump)" />
+    <MESSAGE value="Added animations + enemy type with Death on collision&#10;Added Jump limiter (No flying jump) (Still trying to get Collide with platform)" />
+    <MESSAGE value="Added animations + enemy type with Death on collision&#10;Added Jump limiter (No flying jump) (Still trying to get Collide with platform)&#10;Import Everything pc switch." />
+    <option name="LAST_COMMIT_MESSAGE" value="Added animations + enemy type with Death on collision&#10;Added Jump limiter (No flying jump) (Still trying to get Collide with platform)&#10;Import Everything pc switch." />
+  </component>
+  <component name="antWorkspaceConfiguration">
+    <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
+    <option name="FILTER_TARGETS" value="false" />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/src/sample/Main.java" />
+    <entry file="file://$PROJECT_DIR$/src/sample/sample.fxml" />
+    <entry file="file://$PROJECT_DIR$/src/sample/Controller.java" />
+    <entry file="file://$PROJECT_DIR$/src/assets/textures/s" />
+    <entry file="file://$PROJECT_DIR$/src/DudeControl.java" />
+    <entry file="file://$PROJECT_DIR$/src/assets/textures/powerup.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/assets/textures/burger.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/assets/textures/bob.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/dan/GameApp1D/CoinSpawnerFactory.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" column="58" lean-forward="true" selection-start-line="6" selection-start-column="58" selection-end-line="6" selection-end-column="58" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/assets/textures/newdude.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/dan/GameApp1D/MyTimerDan.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="22" column="107" selection-start-line="22" selection-start-column="107" selection-end-line="22" selection-end-column="107" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk-11.0.1/lib/src.zip!/java.base/java/lang/Runnable.java" />
+    <entry file="file://$PROJECT_DIR$/src/com/dan/GameApp1D/BCMapp.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="216">
+          <caret line="94" column="67" selection-start-line="94" selection-start-column="67" selection-end-line="94" selection-end-column="67" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#3281#3282#0" expanded="true" />
+            <element signature="e#3363#3364#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.idea/libraries/fxgl_0_5_4_uber.xml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/assets/textures/WalkTrump1.jpg" />
+    <entry file="file://$PROJECT_DIR$/src/assets/textures/WalkTrump.JPG" />
+    <entry file="file://$PROJECT_DIR$/src/assets/textures/afkTrump.JPG" />
+    <entry file="file://$PROJECT_DIR$/src/com/dan/PlatformGame/PlatformApp.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2528">
+          <caret line="177" selection-start-line="177" selection-end-line="177" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/dan/PlatformGame/MarioType.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="112">
+          <caret line="11" column="8" selection-start-line="11" selection-start-column="8" selection-end-line="11" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/dan/PlatformGame/marioFactory.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="992">
+          <caret line="67" column="42" selection-start-line="67" selection-start-column="42" selection-end-line="67" selection-end-column="42" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/assets/textures/tiles_spritesheet.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/assets/textures/TrumpSprite.JPG">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/dan/PlatformGame/enemyControl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="288">
+          <caret line="29" column="92" selection-start-line="29" selection-start-column="92" selection-end-line="29" selection-end-column="92" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#684#685#0" expanded="true" />
+            <element signature="e#714#715#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/dan/PlatformGame/playerControl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="832">
+          <caret line="60" column="33" selection-start-line="60" selection-start-column="33" selection-end-line="60" selection-end-column="33" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#558#559#0" expanded="true" />
+            <element signature="e#588#589#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+  </component>
+  <component name="masterDetails">
+    <states>
+      <state key="ArtifactsStructureConfigurable.UI">
+        <settings>
+          <artifact-editor />
+          <last-edited>JavaFXApp</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="FacetStructureConfigurable.UI">
+        <settings>
+          <last-edited>No facets are configured</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="GlobalLibrariesConfigurable.UI">
+        <settings>
+          <last-edited>jre-10.0</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="JdkListConfigurable.UI">
+        <settings>
+          <last-edited>11.0.2</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ModuleStructureConfigurable.UI">
+        <settings>
+          <last-edited>JanuarOpgaveSpil</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+                <option value="0.6" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ProjectLibrariesConfigurable.UI">
+        <settings>
+          <last-edited>openjfx-11.0.2_windows-x64_bin-sdk</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+    </states>
+  </component>
+</project>
