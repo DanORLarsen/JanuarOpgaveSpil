@@ -2,6 +2,7 @@ package com.dan.PlatformGame;
 
 import com.almasb.fxgl.app.GameApplication;
 import com.almasb.fxgl.entity.Entity;
+import com.almasb.fxgl.entity.GameWorld;
 import com.almasb.fxgl.input.UserAction;
 import com.almasb.fxgl.physics.CollisionHandler;
 import com.almasb.fxgl.settings.GameSettings;
@@ -13,7 +14,8 @@ import javafx.util.Duration;
 //--module-path ${PATH_TO_FX} --add-modules=javafx.controls,javafx.graphics,javafx.media,javafx.fxml
 
 import java.util.Map;
-//TO DO: Add Camera + lvls and animated sprite
+//TO DO: Respawn player after finnish, in a new map.
+//(setLevelChanges map but dosnt import playerControll and so on.
 
 public class PlatformApp extends GameApplication {
     public enum EntityType {

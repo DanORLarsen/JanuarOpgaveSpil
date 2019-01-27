@@ -16,14 +16,14 @@
          "name":"Object Layer 1",
          "objects":[
                 {
-                 "height":66.6667,
+                 "height":60.6667,
                  "id":5,
                  "name":"platform",
                  "rotation":0,
                  "type":"platform",
                  "visible":true,
-                 "width":137.333,
-                 "x":140.333,
+                 "width":122.333,
+                 "x":147.333,
                  "y":491.5
                 }, 
                 {
@@ -33,8 +33,8 @@
                  "rotation":0,
                  "type":"platform",
                  "visible":true,
-                 "width":209.333,
-                 "x":489.833,
+                 "width":197.333,
+                 "x":495.833,
                  "y":631
                 }, 
                 {
@@ -66,8 +66,8 @@
                  "rotation":0,
                  "type":"platform",
                  "visible":true,
-                 "width":279,
-                 "x":771,
+                 "width":272,
+                 "x":778,
                  "y":632.167
                 }, 
                 {
@@ -88,19 +88,19 @@
                  "rotation":0,
                  "type":"platform",
                  "visible":true,
-                 "width":418.667,
-                 "x":1.33317,
+                 "width":400.667,
+                 "x":7.33317,
                  "y":632
                 }, 
                 {
-                 "height":66.6667,
+                 "height":65.6667,
                  "id":21,
                  "name":"platform",
                  "rotation":0,
                  "type":"platform",
                  "visible":true,
-                 "width":210.666,
-                 "x":350.667,
+                 "width":190.666,
+                 "x":360.667,
                  "y":421.333
                 }, 
                 {

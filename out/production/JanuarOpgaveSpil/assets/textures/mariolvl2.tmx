@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" tiledversion="1.0.1" orientation="orthogonal" renderorder="right-down" width="15" height="10" tilewidth="70" tileheight="70" nextobjectid="29">
+ <tileset firstgid="1" source="untitled.tsx"/>
+ <layer name="Tile Layer 1" width="15" height="10">
+  <data encoding="csv">
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,46,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,58,
+0,0,0,0,27,27,27,0,0,0,0,0,74,74,74,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,27,27,0,0,0,0,0,
+0,27,27,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,27,27,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+74,74,74,74,74,139,139,74,74,74,74,139,74,74,74
+</data>
+ </layer>
+ <objectgroup name="Object Layer 1">
+  <object id="1" name="platform" type="platform" x="-1" y="632" width="350" height="67"/>
+  <object id="3" name="water" type="water" x="355" y="666" width="136" height="31"/>
+  <object id="5" name="platform" type="platform" x="491" y="631" width="277" height="68"/>
+  <object id="7" name="platform" type="platform" x="843" y="632" width="204" height="66"/>
+  <object id="8" name="water" type="water" x="770" y="666" width="72" height="32"/>
+  <object id="9" name="platform" type="platform" x="71" y="352" width="136" height="36"/>
+  <object id="10" name="platform" type="platform" x="71" y="352" width="136" height="36"/>
+  <object id="13" name="platform" type="platform" x="283" y="493" width="136" height="36"/>
+  <object id="14" name="platform" type="platform" x="562" y="281" width="136" height="36"/>
+  <object id="15" name="platform" type="platform" x="283" y="142" width="205" height="36"/>
+  <object id="16" name="platform" type="platform" x="839" y="141" width="210" height="67"/>
+  <object id="17" name="platform" type="platform" x="-1" y="-1" height="701"/>
+  <object id="19" name="platform" type="platform" x="1052" y="-17.5" height="717"/>
+  <object id="20" name="platform" type="platform" x="1" y="-0.5" width="1048"/>
+  <object id="21" type="coin" x="327.333" y="441.333" width="45.3333" height="45.3333"/>
+  <object id="22" type="coin" x="307.333" y="92.3333" width="45.3333" height="45.3333"/>
+  <object id="23" type="coin" x="400.333" y="92.3333" width="45.3333" height="45.3333"/>
+  <object id="24" type="coin" x="85.3333" y="303.333" width="45.3333" height="45.3333"/>
+  <object id="25" type="coin" x="501.333" y="230.333" width="45.3333" height="45.3333"/>
+  <object id="26" type="coin" x="998.333" y="583.333" width="45.3333" height="45.3333"/>
+  <object id="27" type="coin" x="856.333" y="93.3333" width="45.3333" height="45.3333"/>
+  <object id="28" type="door" x="982.333" y="27" width="65.3333" height="114"/>
+ </objectgroup>
+</map>
