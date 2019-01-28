@@ -2,7 +2,6 @@ package com.dan.PlatformGame;
 
 import com.almasb.fxgl.app.GameApplication;
 import com.almasb.fxgl.entity.Entity;
-import com.almasb.fxgl.entity.GameWorld;
 import com.almasb.fxgl.input.UserAction;
 import com.almasb.fxgl.physics.CollisionHandler;
 import com.almasb.fxgl.settings.GameSettings;
@@ -14,8 +13,7 @@ import javafx.util.Duration;
 //--module-path ${PATH_TO_FX} --add-modules=javafx.controls,javafx.graphics,javafx.media,javafx.fxml
 
 import java.util.Map;
-//TO DO: Respawn player after finnish, in a new map.
-//(setLevelChanges map but dosnt import playerControll and so on.
+//TO DO: Expot game to JAR
 
 public class PlatformApp extends GameApplication {
     public enum EntityType {
@@ -34,11 +32,13 @@ public class PlatformApp extends GameApplication {
     }
     private int coins = 0;
     private int notDone = 2;
-    private Entity player;
+    private Entity Player1;
+    private Entity player2;
     private boolean cheater = false;
     private int hitWater = 0;
     private Entity Enemy;
     private int jumpCounter = 0;
+    private int lvlsComplete = 0;
 
 
     @Override
@@ -46,35 +46,35 @@ public class PlatformApp extends GameApplication {
         getInput().addAction(new UserAction("left") {
             @Override
             protected void onAction() {
-                player.getComponent(playerControl.class).left();
+                Player1.getComponent(playerControl.class).left();
             }
         }, KeyCode.LEFT);
 
         getInput().addAction(new UserAction("right") {
             @Override
             protected void onAction() {
-                player.getComponent(playerControl.class).right();
+                Player1.getComponent(playerControl.class).right();
             }
         }, KeyCode.RIGHT);
 
         getInput().addAction(new UserAction("leftA") {
             @Override
             protected void onAction() {
-                player.getComponent(playerControl.class).left();
+                Player1.getComponent(playerControl.class).left();
             }
         }, KeyCode.A);
 
         getInput().addAction(new UserAction("rightD") {
             @Override
             protected void onAction() {
-                player.getComponent(playerControl.class).right();
+                Player1.getComponent(playerControl.class).right();
             }
         }, KeyCode.D);
 
         getInput().addAction(new UserAction("jump") {
             @Override
             protected void onActionBegin() {
-                //For double/triple jump maybe?  System.out.println(player.isColliding(platform)); (if collide -  jumpcounter = 0;) else only double jump
+                //For double/triple jump maybe?  System.out.println(Player1.isColliding(platform)); (if collide -  jumpcounter = 0;) else only double jump
                 d();
             }
         }, KeyCode.SPACE);
@@ -82,7 +82,7 @@ public class PlatformApp extends GameApplication {
         getInput().addAction(new UserAction("jumpW") {
             @Override
             protected void onActionBegin() {
-                //For double/triple jump maybe?  System.out.println(player.isColliding(platform)); (if collide -  jumpcounter = 0;) else only double jump
+                //For double/triple jump maybe?  System.out.println(Player1.isColliding(platform)); (if collide -  jumpcounter = 0;) else only double jump
                 d();
             }
         }, KeyCode.W);
@@ -90,7 +90,7 @@ public class PlatformApp extends GameApplication {
         getInput().addAction(new UserAction("jumpUp") {
             @Override
             protected void onActionBegin() {
-                //For double/triple jump maybe?  System.out.println(player.isColliding(platform)); (if collide -  jumpcounter = 0;) else only double jump
+                //For double/triple jump maybe?  System.out.println(Player1.isColliding(platform)); (if collide -  jumpcounter = 0;) else only double jump
                 d();
             }
         }, KeyCode.UP);
@@ -99,7 +99,7 @@ public class PlatformApp extends GameApplication {
         getInput().addAction(new UserAction("powerUp") {
             @Override
             protected void onActionEnd() {
-                player.getComponent(playerControl.class).setMoveSpeed();
+                Player1.getComponent(playerControl.class).setMoveSpeed();
                 System.out.println("Cheat activated");
                 cheater = true;
             }
@@ -109,9 +109,9 @@ public class PlatformApp extends GameApplication {
     private void d() {
         if (jumpCounter < 4) {
             jumpCounter++;
-            player.getComponent(playerControl.class).jump();
+            Player1.getComponent(playerControl.class).jump();
             if (jumpCounter > 3) {
-                player.getComponent(playerControl.class).jump();
+                Player1.getComponent(playerControl.class).jump();
                 getMasterTimer().runOnceAfter(() -> {
                     jumpCounter = 0;
                 }, Duration.seconds(0.50));
@@ -124,7 +124,7 @@ public class PlatformApp extends GameApplication {
         //Adding my EntityFactory, + map
         getGameWorld().addEntityFactory(new marioFactory());
         getGameWorld().setLevelFromMap("MarioLevel-1.json");
-        player = getGameWorld().spawn("player",50,400);
+        Player1 = getGameWorld().spawn("player",50,400);
         Enemy = getGameWorld().spawn("enemies",300, 400);
         Enemy.getComponent(enemyControl.class).jump();
         getAudioPlayer().setGlobalSoundVolume(0.12);
@@ -141,10 +141,19 @@ public class PlatformApp extends GameApplication {
             // order of types is the same as passed into the constructor
             @Override
             protected void onCollisionBegin(Entity players, Entity coin) {
-                player.removeFromWorld();
+                Player1.removeFromWorld();
                 Enemy.removeFromWorld();
-                Enemy = getGameWorld().spawn("enemies",300,600);
-                player = getGameWorld().spawn("player",50,500);
+                if (lvlsComplete == 2) {
+                Enemy = getGameWorld().spawn("enemies",50,400);
+                Player1 = getGameWorld().spawn("player",50,500);
+                }
+                if (lvlsComplete==1){
+                    Player1 = getGameWorld().spawn("player",50,400);
+                    Enemy = getGameWorld().spawn("enemies",735, 400);
+                }
+                else {Enemy = getGameWorld().spawn("enemies",300,600);
+                    Player1 = getGameWorld().spawn("player",50,500);}
+
 
             }});
         getPhysicsWorld().addCollisionHandler(new CollisionHandler(PlatformApp.EntityType.PLAYER, PlatformApp.EntityType.COIN) {
@@ -164,9 +173,9 @@ public class PlatformApp extends GameApplication {
             // order of types is the same as passed into the constructor
             @Override
             protected void onCollisionBegin(Entity players, Entity coin) {
-                player.removeFromWorld();
+                Player1.removeFromWorld();
                 hitWater++;
-                player = getGameWorld().spawn("player",50,50);
+                Player1 = getGameWorld().spawn("player",50,50);
             }});
 
         getPhysicsWorld().addCollisionHandler(new CollisionHandler(PlatformApp.EntityType.PLAYER, PlatformApp.EntityType.DOOR) {
@@ -174,20 +183,48 @@ public class PlatformApp extends GameApplication {
             protected void onCollisionBegin(Entity player, Entity door) {
                 if (coins == 5) //Check if all burgers are collected
                 {
+                    lvlsComplete++; //Need for lvl 3 later. when switch to lvl 2 works
                     MyTimerDan.stop();
+                    Player1.removeFromWorld();
+                    if (lvlsComplete == 3)
+                {getDisplay().showMessageBox("Game Complete!", () -> {
+                    System.out.println("Dialog closed!");
+                    exit();
+                });}
                     getDisplay().showMessageBox(MyTimerDan.getStringScore());
                     getDisplay().showMessageBox("Level Complete!", () -> {
-                    System.out.println("Dialog closed!");});
-
+                    System.out.println("Dialog closed!");
+                    });
+                    if (lvlsComplete == 1){
+                    getGameWorld().setLevelFromMap("MarioLevel-2.json");
+                    coins = 0;
+                    getGameState().increment("coins",0);
+                    notDone = 0;
+                    Player1 = getGameWorld().spawn("player",50,400);
+                    Enemy = getGameWorld().spawn("enemies",735, 400);
+                    Player1.getComponent(playerControl.class);
                     System.out.println("you hit the water " + hitWater + " Time(s)");
+
+                    Enemy.getComponent(enemyControl.class).jump();}
+                    else if (lvlsComplete == 2)
+                    { getGameWorld().setLevelFromMap("MarioLevel-3.json");
+                        coins = 0;
+                        notDone = 0;
+                        Player1 = getGameWorld().spawn("player",50,50);
+                        Player1.getComponent(playerControl.class);
+                        System.out.println("you hit the water " + hitWater + " Time(s)");
+                        Enemy = getGameWorld().spawn("enemies",60, 400);
+                        Enemy.getComponent(enemyControl.class).jump();}
+
+
 
                     if (cheater == true) //If cheats were activated give cheater messsage + playSound
                     {
                         getAudioPlayer().playSound("Trolol sound.mp3");
-                        getDisplay().showMessageBox("Cheater");}
-                }
+                        getDisplay().showMessageBox("Cheater");}}
+
                 //If not all are collected then do this.
-                else if (coins != 5) {
+                 if (coins != 5) {
                     if (notDone == 2) {
                         getDisplay().showMessageBox("Missing Burger(s)");
                         notDone--;
@@ -202,6 +239,8 @@ public class PlatformApp extends GameApplication {
         vars.put("coins", 0);
         vars.put("hints", "O - Activate Cheats");
     }
+
+
 
     @Override
     protected void initUI() {
