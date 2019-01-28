@@ -175,7 +175,10 @@ public class PlatformApp extends GameApplication {
             protected void onCollisionBegin(Entity players, Entity coin) {
                 Player1.removeFromWorld();
                 hitWater++;
-                Player1 = getGameWorld().spawn("player",50,50);
+                if (lvlsComplete == 0 || lvlsComplete == 1)
+                {Player1 = getGameWorld().spawn("player",50,400);}
+                else {
+                Player1 = getGameWorld().spawn("player",50,50);}
             }});
 
         getPhysicsWorld().addCollisionHandler(new CollisionHandler(PlatformApp.EntityType.PLAYER, PlatformApp.EntityType.DOOR) {
