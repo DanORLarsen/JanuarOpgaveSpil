@@ -1,5 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="ArtifactsWorkspaceSettings">
+    <artifacts-to-build>
+      <artifact name="BurgerGame" />
+    </artifacts-to-build>
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="Added animations + enemy type with Death on collision&#10;Added Jump limiter (No flying jump) (Still trying to get Collide with platform)&#10;Import Everything pc switch." />
     <ignored path="JavaFxApplication.iws" />
@@ -57,16 +62,21 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/dan/PlatformGame/PlatformApp.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="384">
-              <caret line="24" column="36" selection-start-line="24" selection-start-column="36" selection-end-line="24" selection-end-column="36" />
+            <state relative-caret-position="194">
+              <caret line="37" column="27" selection-start-line="37" selection-start-column="27" selection-end-line="37" selection-end-column="27" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
             </state>
           </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/.idea/artifacts/BurgerGame.xml">
+          <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
@@ -220,75 +230,52 @@
     </navigator>
     <panes>
       <pane id="Scope" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
             <path>
-              <item name="JanuarOpgaveSpil1" type="b2602c69:ProjectViewProjectNode" />
-              <item name="JanuarOpgaveSpil1" type="462c0819:PsiDirectoryNode" />
+              <item name="JanuarOpgaveSpil" type="b2602c69:ProjectViewProjectNode" />
+              <item name="JanuarOpgaveSpil" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="JanuarOpgaveSpil1" type="b2602c69:ProjectViewProjectNode" />
-              <item name="JanuarOpgaveSpil1" type="462c0819:PsiDirectoryNode" />
+              <item name="JanuarOpgaveSpil" type="b2602c69:ProjectViewProjectNode" />
+              <item name="JanuarOpgaveSpil" type="462c0819:PsiDirectoryNode" />
+              <item name=".idea" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="JanuarOpgaveSpil" type="b2602c69:ProjectViewProjectNode" />
+              <item name="JanuarOpgaveSpil" type="462c0819:PsiDirectoryNode" />
+              <item name=".idea" type="462c0819:PsiDirectoryNode" />
+              <item name="artifacts" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="JanuarOpgaveSpil" type="b2602c69:ProjectViewProjectNode" />
+              <item name="JanuarOpgaveSpil" type="462c0819:PsiDirectoryNode" />
+              <item name="out" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="JanuarOpgaveSpil" type="b2602c69:ProjectViewProjectNode" />
+              <item name="JanuarOpgaveSpil" type="462c0819:PsiDirectoryNode" />
+              <item name="out" type="462c0819:PsiDirectoryNode" />
+              <item name="artifacts" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="JanuarOpgaveSpil" type="b2602c69:ProjectViewProjectNode" />
+              <item name="JanuarOpgaveSpil" type="462c0819:PsiDirectoryNode" />
+              <item name="out" type="462c0819:PsiDirectoryNode" />
+              <item name="artifacts" type="462c0819:PsiDirectoryNode" />
+              <item name="BurgerGame" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="JanuarOpgaveSpil" type="b2602c69:ProjectViewProjectNode" />
+              <item name="JanuarOpgaveSpil" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="JanuarOpgaveSpil1" type="b2602c69:ProjectViewProjectNode" />
-              <item name="JanuarOpgaveSpil1" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="assets" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="JanuarOpgaveSpil1" type="b2602c69:ProjectViewProjectNode" />
-              <item name="JanuarOpgaveSpil1" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="assets" type="462c0819:PsiDirectoryNode" />
-              <item name="json" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="JanuarOpgaveSpil1" type="b2602c69:ProjectViewProjectNode" />
-              <item name="JanuarOpgaveSpil1" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="assets" type="462c0819:PsiDirectoryNode" />
-              <item name="textures" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="JanuarOpgaveSpil1" type="b2602c69:ProjectViewProjectNode" />
-              <item name="JanuarOpgaveSpil1" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="dan" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="JanuarOpgaveSpil1" type="b2602c69:ProjectViewProjectNode" />
-              <item name="JanuarOpgaveSpil1" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="dan" type="462c0819:PsiDirectoryNode" />
-              <item name="GameApp1D" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="JanuarOpgaveSpil1" type="b2602c69:ProjectViewProjectNode" />
-              <item name="JanuarOpgaveSpil1" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="dan" type="462c0819:PsiDirectoryNode" />
-              <item name="GameApp1D" type="462c0819:PsiDirectoryNode" />
-              <item name="BCMapp.java" type="529ef68f:ClassesTreeStructureProvider$PsiClassOwnerTreeNode" />
-            </path>
-            <path>
-              <item name="JanuarOpgaveSpil1" type="b2602c69:ProjectViewProjectNode" />
-              <item name="JanuarOpgaveSpil1" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="dan" type="462c0819:PsiDirectoryNode" />
-              <item name="PlatformGame" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="JanuarOpgaveSpil1" type="b2602c69:ProjectViewProjectNode" />
-              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -301,10 +288,10 @@
     <property name="OverrideImplement.combined" value="false" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1548695313760" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1548800482766" />
     <property name="dynamic.classpath" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="project.structure.last.edited" value="Problems" />
+    <property name="last_opened_file_path" value="C:/Program Files/Java/javafx-sdk-11.0.2" />
+    <property name="project.structure.last.edited" value="Artifacts" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="recentsLimit" value="5" />
@@ -334,7 +321,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.PlatformApp">
+  <component name="RunManager" selected="JAR Application.JanuarOpgaveSpil.jar">
     <configuration default="true" type="DartUnitRunConfigurationType" factoryName="DartUnit">
       <option name="VMOptions" />
       <option name="arguments" />
@@ -407,6 +394,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="JanuarOpgaveSpil.jar" type="JarApplication" factoryName="JAR Application" temporary="true">
+      <option name="JAR_PATH" value="$PROJECT_DIR$/out/artifacts/BurgerGame/JanuarOpgaveSpil.jar" />
+      <option name="VM_PARAMETERS" value="--module-path ${PATH_TO_FX} --add-modules=javafx.controls,javafx.graphics,javafx.media,javafx.fxml" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <method v="2" />
+    </configuration>
     <configuration default="true" type="TestNG">
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <option name="TEST_SEARCH_SCOPE">
@@ -431,9 +424,11 @@
       <item itemvalue="Application.Main" />
       <item itemvalue="Application.BCMapp" />
       <item itemvalue="Application.PlatformApp" />
+      <item itemvalue="JAR Application.JanuarOpgaveSpil.jar" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JAR Application.JanuarOpgaveSpil.jar" />
         <item itemvalue="Application.PlatformApp" />
         <item itemvalue="Application.BCMapp" />
       </list>
@@ -474,6 +469,7 @@
       <workItem from="1548695525981" duration="281000" />
       <workItem from="1548756241945" duration="159000" />
       <workItem from="1548756581099" duration="28000" />
+      <workItem from="1548800174701" duration="314000" />
     </task>
     <task id="LOCAL-00001" summary="Disabled into and menu">
       <created>1547126616642</created>
@@ -710,13 +706,12 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="81887000" />
+    <option name="totallyTimeSpent" value="82201000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-4" y="-4" width="1928" height="1044" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.6703755" visible="true" weight="0.12619808" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.6703755" visible="true" weight="0.12726304" />
       <window_info id="Structure" order="1" weight="0.25" />
       <window_info id="Favorites" order="2" weight="0.32995737" />
       <window_info id="Designer" order="3" />
@@ -831,8 +826,8 @@
     <entry file="file://$PROJECT_DIR$/src/com/dan/PlatformGame/lvl2.java" />
     <entry file="file://$PROJECT_DIR$/src/com/dan/PlatformGame/PlatformApp.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="384">
-          <caret line="24" column="36" selection-start-line="24" selection-start-column="36" selection-end-line="24" selection-end-column="36" />
+        <state relative-caret-position="194">
+          <caret line="37" column="27" selection-start-line="37" selection-start-column="27" selection-end-line="37" selection-end-column="27" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -898,17 +893,21 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/.idea/artifacts/BurgerGame.xml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
   </component>
   <component name="masterDetails">
     <states>
       <state key="ArtifactsStructureConfigurable.UI">
         <settings>
           <artifact-editor />
-          <last-edited>JavaFXApp</last-edited>
+          <last-edited>BurgerGame</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
                 <option value="0.2" />
+                <option value="0.5" />
               </list>
             </option>
           </splitter-proportions>
@@ -957,7 +956,6 @@
             <option name="proportions">
               <list>
                 <option value="0.2" />
-                <option value="0.6" />
               </list>
             </option>
           </splitter-proportions>
@@ -965,7 +963,7 @@
       </state>
       <state key="ProjectLibrariesConfigurable.UI">
         <settings>
-          <last-edited>openjfx-11.0.2_windows-x64_bin-sdk</last-edited>
+          <last-edited>javafx</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>

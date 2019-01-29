@@ -10,5 +10,6 @@
     <orderEntry type="library" name="fxgl-0.5.4-uber" level="project" />
     <orderEntry type="library" name="lib1" level="project" />
     <orderEntry type="library" name="openjfx-11.0.2_windows-x64_bin-sdk" level="project" />
+    <orderEntry type="library" name="javafx" level="project" />
   </component>
 </module>
