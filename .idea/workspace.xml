@@ -60,8 +60,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/dan/PlatformGame/PlatformApp.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="304">
-              <caret line="180" column="64" selection-start-line="180" selection-start-column="64" selection-end-line="180" selection-end-column="64" />
+            <state relative-caret-position="384">
+              <caret line="24" column="36" selection-start-line="24" selection-start-column="36" selection-end-line="24" selection-end-column="36" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -472,6 +472,8 @@
       <workItem from="1548690502295" duration="2162000" />
       <workItem from="1548692771782" duration="2540000" />
       <workItem from="1548695525981" duration="281000" />
+      <workItem from="1548756241945" duration="159000" />
+      <workItem from="1548756581099" duration="28000" />
     </task>
     <task id="LOCAL-00001" summary="Disabled into and menu">
       <created>1547126616642</created>
@@ -708,12 +710,13 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="81700000" />
+    <option name="totallyTimeSpent" value="81887000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-4" y="-4" width="1928" height="1044" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.6703755" visible="true" weight="0.124068156" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.6703755" visible="true" weight="0.12619808" />
       <window_info id="Structure" order="1" weight="0.25" />
       <window_info id="Favorites" order="2" weight="0.32995737" />
       <window_info id="Designer" order="3" />
@@ -828,8 +831,8 @@
     <entry file="file://$PROJECT_DIR$/src/com/dan/PlatformGame/lvl2.java" />
     <entry file="file://$PROJECT_DIR$/src/com/dan/PlatformGame/PlatformApp.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="304">
-          <caret line="180" column="64" selection-start-line="180" selection-start-column="64" selection-end-line="180" selection-end-column="64" />
+        <state relative-caret-position="384">
+          <caret line="24" column="36" selection-start-line="24" selection-start-column="36" selection-end-line="24" selection-end-column="36" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

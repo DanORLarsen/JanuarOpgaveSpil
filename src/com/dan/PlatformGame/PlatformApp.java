@@ -13,7 +13,7 @@ import javafx.util.Duration;
 //--module-path ${PATH_TO_FX} --add-modules=javafx.controls,javafx.graphics,javafx.media,javafx.fxml
 
 import java.util.Map;
-//TO DO: Expot game to JAR
+//TO DO: Export game to JAR
 
 public class PlatformApp extends GameApplication {
     public enum EntityType {
@@ -22,12 +22,14 @@ public class PlatformApp extends GameApplication {
     @Override
     protected void initSettings(GameSettings gameSettings) {
         gameSettings.setTitle("Burger Mario");
-        gameSettings.setVersion("0.5");
+        gameSettings.setVersion("1.0");
         gameSettings.setMenuEnabled(false);
         gameSettings.setIntroEnabled(false);
         gameSettings.setWidth(15*70);
         gameSettings.setHeight(10*70);
+        gameSettings.setAppIcon("burger.png");
         MyTimerDan.start();
+
 
     }
     private int coins = 0;
