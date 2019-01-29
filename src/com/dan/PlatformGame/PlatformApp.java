@@ -12,6 +12,7 @@ import javafx.util.Duration;
 
 //--module-path ${PATH_TO_FX} --add-modules=javafx.controls,javafx.graphics,javafx.media,javafx.fxml
 
+import java.io.IOException;
 import java.util.Map;
 //TO DO: Export game to JAR
 
@@ -266,6 +267,16 @@ public class PlatformApp extends GameApplication {
 
     public static void main(String[] args) {
         launch(args);
-
+/*
+        if (args.length == 0) {
+            try {
+                // re-launch the app itselft with VM option passed
+                Runtime.getRuntime().exec(new String[] {"java", "-Xmx1024m", "-jar", "JanuarOpgaveSpil.jar", "test"});
+            } catch (IOException ioe) {
+                ioe.printStackTrace();
+            }
+            System.exit(0);
+        }
+*/
     }
 }
