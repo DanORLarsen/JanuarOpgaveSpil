@@ -65,7 +65,7 @@ public Entity newPlatform(SpawnData data) {
         return Entities.builder()
                 .type(PlatformApp.EntityType.PLAYER)
                 .from(data)
-                .viewFromTexture("trumpAfk.png")
+                .viewFromTexture("TrumpAfk.png")
                 .with(new CollidableComponent(true))
                 .with(physics)
                 .with(new playerControl())

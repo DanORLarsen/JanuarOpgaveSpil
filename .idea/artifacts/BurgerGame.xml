@@ -1,5 +1,5 @@
 <component name="ArtifactManager">
-  <artifact type="jar" name="BurgerGame">
+  <artifact type="jar" build-on-make="true" name="BurgerGame">
     <output-path>$PROJECT_DIR$/out/artifacts/BurgerGame</output-path>
     <root id="archive" name="JanuarOpgaveSpil.jar">
       <element id="module-output" name="JanuarOpgaveSpil" />

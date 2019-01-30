@@ -131,7 +131,7 @@ public class PlatformApp extends GameApplication {
         Enemy = getGameWorld().spawn("enemies",300, 400);
         Enemy.getComponent(enemyControl.class).jump();
         getAudioPlayer().setGlobalSoundVolume(0.12);
-        getAudioPlayer().loopBGM("Kevin Macleod Scheming Weasel (faster version).mp3");
+        getAudioPlayer().loopBGM("Kevin MacLeod Scheming Weasel (faster version).mp3");
         System.out.println(getAudioPlayer().getGlobalSoundVolume());
     }
 
@@ -267,16 +267,16 @@ public class PlatformApp extends GameApplication {
 
     public static void main(String[] args) {
         launch(args);
-/*
+
         if (args.length == 0) {
             try {
                 // re-launch the app itselft with VM option passed
-                Runtime.getRuntime().exec(new String[] {"java", "-Xmx1024m", "-jar", "JanuarOpgaveSpil.jar", "test"});
+                Runtime.getRuntime().exec(new String[] {"java", "--module-path C:\\Users\\Dan\\IdeaProjects\\JanuarOpgaveSpil\\system\\javafx-sdk-11.0.2\\lib --add-modules=javafx.controls,javafx.graphics,javafx.media,javafx.fxml", "-jar", "JanuarOpgaveSpil.jar", "test"});
             } catch (IOException ioe) {
                 ioe.printStackTrace();
             }
             System.exit(0);
         }
-*/
+
     }
 }
