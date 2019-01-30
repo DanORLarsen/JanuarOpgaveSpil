@@ -271,7 +271,7 @@ public class PlatformApp extends GameApplication {
         if (args.length == 0) {
             try {
                 // re-launch the app itselft with VM option passed
-                Runtime.getRuntime().exec(new String[] {"java", "--module-path C:\\Users\\Dan\\IdeaProjects\\JanuarOpgaveSpil\\system\\javafx-sdk-11.0.2\\lib --add-modules=javafx.controls,javafx.graphics,javafx.media,javafx.fxml", "-jar", "JanuarOpgaveSpil.jar", "test"});
+                Runtime.getRuntime().exec(new String[] {"java", "--module-path C:\\Users\\Dan\\IdeaProjects\\JanuarOpgaveSpil\\system\\javafx-sdk-11.0.2\\lib --add-modules=javafx.controls,javafx.graphics,javafx.media,javafx.fxml -Dfile.encoding=windows-1252 -jar C:\\Users\\Dan\\IdeaProjects\\JanuarOpgaveSpil\\out\\artifacts\\BurgerGame\\JanuarOpgaveSpil.jar"});
             } catch (IOException ioe) {
                 ioe.printStackTrace();
             }

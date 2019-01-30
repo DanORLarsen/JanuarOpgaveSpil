@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ArtifactsWorkspaceSettings">
     <artifacts-to-build>
-      <artifact name="BurgerGame" />
+      <artifact name="JanuarOpgaveSpil" />
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
@@ -65,8 +65,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/dan/PlatformGame/PlatformApp.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="626">
-              <caret line="273" column="66" lean-forward="true" selection-start-line="273" selection-start-column="66" selection-end-line="273" selection-end-column="66" />
+            <state relative-caret-position="530">
+              <caret line="267" column="44" lean-forward="true" selection-start-line="267" selection-start-column="44" selection-end-line="267" selection-end-column="44" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -231,8 +231,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
-      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -311,6 +309,8 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -323,7 +323,7 @@
     <property name="OverrideImplement.combined" value="false" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1548855583742" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1548857654102" />
     <property name="dynamic.classpath" value="false" />
     <property name="last_opened_file_path" value="C:/Program Files/Java/javafx-sdk-11.0.2" />
     <property name="project.structure.last.edited" value="Artifacts" />
@@ -509,6 +509,9 @@
       <workItem from="1548848033972" duration="141000" />
       <workItem from="1548849981882" duration="2641000" />
       <workItem from="1548855667410" duration="81000" />
+      <workItem from="1548855910843" duration="25000" />
+      <workItem from="1548857212425" duration="110000" />
+      <workItem from="1548857371347" duration="286000" />
     </task>
     <task id="LOCAL-00001" summary="Disabled into and menu">
       <created>1547126616642</created>
@@ -745,12 +748,12 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="86565000" />
+    <option name="totallyTimeSpent" value="86986000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-4" y="-4" width="1928" height="1044" extended-state="6" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.6703755" visible="true" weight="0.13258786" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.6703755" visible="true" weight="0.13578275" />
       <window_info id="Structure" order="1" weight="0.25" />
       <window_info id="Favorites" order="2" weight="0.32995737" />
       <window_info id="Designer" order="3" />
@@ -865,8 +868,8 @@
     <entry file="file://$PROJECT_DIR$/src/com/dan/PlatformGame/lvl2.java" />
     <entry file="file://$PROJECT_DIR$/src/com/dan/PlatformGame/PlatformApp.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="626">
-          <caret line="273" column="66" lean-forward="true" selection-start-line="273" selection-start-column="66" selection-end-line="273" selection-end-column="66" />
+        <state relative-caret-position="530">
+          <caret line="267" column="44" lean-forward="true" selection-start-line="267" selection-start-column="44" selection-end-line="267" selection-end-column="44" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -941,7 +944,7 @@
       <state key="ArtifactsStructureConfigurable.UI">
         <settings>
           <artifact-editor />
-          <last-edited>BurgerGame</last-edited>
+          <last-edited>JanuarOpgaveSpil</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
