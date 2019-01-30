@@ -65,8 +65,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/dan/PlatformGame/PlatformApp.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="166">
-              <caret line="262" lean-forward="true" selection-start-line="262" selection-end-line="262" />
+            <state relative-caret-position="736">
+              <caret line="279" column="2" selection-start-line="279" selection-start-column="2" selection-end-line="279" selection-end-column="2" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -229,6 +229,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -274,6 +276,19 @@
               <item name="JanuarOpgaveSpil" type="b2602c69:ProjectViewProjectNode" />
               <item name="JanuarOpgaveSpil" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="assets" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="JanuarOpgaveSpil" type="b2602c69:ProjectViewProjectNode" />
+              <item name="JanuarOpgaveSpil" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="assets" type="462c0819:PsiDirectoryNode" />
+              <item name="textures" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="JanuarOpgaveSpil" type="b2602c69:ProjectViewProjectNode" />
+              <item name="JanuarOpgaveSpil" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="dan" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -287,8 +302,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
-      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -301,7 +314,7 @@
     <property name="OverrideImplement.combined" value="false" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1548800482766" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1548824881272" />
     <property name="dynamic.classpath" value="false" />
     <property name="last_opened_file_path" value="C:/Program Files/Java/javafx-sdk-11.0.2" />
     <property name="project.structure.last.edited" value="Artifacts" />
@@ -311,15 +324,16 @@
     <property name="settings.editor.selected.configurable" value="preferences.pathVariables" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Dan\IdeaProjects\JanuarOpgaveSpil\src\assets\textures" />
+      <recent name="C:\Users\Dan\IdeaProjects\JanuarOpgaveSpil\src\assets\sounds" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\Dan\IdeaProjects\JanuarOpgaveSpil\src\assets\music" />
       <recent name="C:\Users\Dan\IdeaProjects\JanuarOpgaveSpil\src\assets\json" />
       <recent name="C:\Users\Dan\IdeaProjects\JanuarOpgaveSpil\src\assets\textures" />
       <recent name="C:\Users\Dan\IdeaProjects\JanuarOpgaveSpil\src" />
       <recent name="C:\Users\Dan\IdeaProjects\JanuarOpgaveSpil\assets" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\Dan\IdeaProjects\JanuarOpgaveSpil\src\assets\sounds" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -483,7 +497,8 @@
       <workItem from="1548756241945" duration="159000" />
       <workItem from="1548756581099" duration="28000" />
       <workItem from="1548800174701" duration="314000" />
-      <workItem from="1548801189287" duration="515000" />
+      <workItem from="1548801189287" duration="965000" />
+      <workItem from="1548824347934" duration="536000" />
     </task>
     <task id="LOCAL-00001" summary="Disabled into and menu">
       <created>1547126616642</created>
@@ -720,13 +735,12 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="82716000" />
+    <option name="totallyTimeSpent" value="83702000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-4" y="-4" width="1928" height="1044" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.6703755" visible="true" weight="0.12832801" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.6703755" visible="true" weight="0.12939297" />
       <window_info id="Structure" order="1" weight="0.25" />
       <window_info id="Favorites" order="2" weight="0.32995737" />
       <window_info id="Designer" order="3" />
@@ -735,7 +749,7 @@
       <window_info id="Capture Tool" order="6" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.26349893" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.32181427" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.32181427" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.3991323" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -839,6 +853,19 @@
     <entry file="file://$PROJECT_DIR$/src/assets/textures/WalkTrump.JPG" />
     <entry file="file://$PROJECT_DIR$/src/assets/textures/afkTrump.JPG" />
     <entry file="file://$PROJECT_DIR$/src/com/dan/PlatformGame/lvl2.java" />
+    <entry file="file://$PROJECT_DIR$/src/com/dan/PlatformGame/PlatformApp.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="736">
+          <caret line="279" column="2" selection-start-line="279" selection-start-column="2" selection-end-line="279" selection-end-column="2" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.idea/artifacts/BurgerGame.xml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/dan/GameApp1D/BCMapp.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2080">
@@ -894,19 +921,6 @@
             <element signature="imports" expanded="true" />
             <element signature="e#684#685#0" expanded="true" />
             <element signature="e#714#715#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.idea/artifacts/BurgerGame.xml">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/dan/PlatformGame/PlatformApp.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="166">
-          <caret line="262" lean-forward="true" selection-start-line="262" selection-end-line="262" />
-          <folding>
-            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>

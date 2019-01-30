@@ -15,6 +15,7 @@
       <element id="extracted-dir" path="$USER_HOME$/Downloads/openjfx-11.0.2_windows-x64_bin-sdk.zip" path-in-jar="/" />
       <element id="library" level="project" name="javafx" />
       <element id="extracted-dir" path="$PROJECT_DIR$/../JavaDropGame/fxgl-0.5.4-uber.jar" path-in-jar="/" />
+      <element id="module-source" name="JanuarOpgaveSpil" />
     </root>
   </artifact>
 </component>
